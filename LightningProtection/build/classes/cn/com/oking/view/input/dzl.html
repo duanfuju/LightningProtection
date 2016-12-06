@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+#outputPageHeader()
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<style type="text/css">
+body {
+	width:500px;
+	height: 600px; 
+}
+td{
+	border-left:1px solid #ccc;
+	border-top:1px solid #ccc;
+	width: 100px;
+}
+table{
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.boldFangsong {
+	font-family: "仿宋";
+	font-size: 14px;
+	font-weight: bold;
+	width:20px;
+	
+}
+</style>
+<script type="text/javascript">
+function preview()    
+{    
+    bdhtml=window.document.body.innerHTML;    
+    sprnstr="<!--startprint-->";    
+    eprnstr="<!--endprint-->";    
+    prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+17);  
+    prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+    window.document.body.innerHTML=prnhtml;    
+   window.print();    
+} 
+</script>
+</head>
+
+<body>
+
+<div id="submit" style="float: right;"></div>
+<div id="btnPrint"></div>
+<!--startprint-->
+	<table style="text-align: center;">
+		<tr>
+			<td colspan="5" style="text-align: center;font-size: 20px" >土壤电阻率检测原始记录表</td>
+		</tr>
+		<tr>
+			<td width="56" class="boldFangsong">检测日期</td>
+			<td width="73" align="center"><label id="checkDate">2015-3-20</label></td>
+			<td width="56" class="boldFangsong">校正系数</td>
+			<td colspan="2" align="center">Ψ<label id="correctionFactor">1.5</label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">天气情况</td>
+			<td align="center"><label id="weather">晴</label></td>
+			<td class="boldFangsong">检测员(签名)</td>
+			<td colspan="2" align="center"><label id="checkPerson">张三</label></td>
+		</tr>
+		<tr>
+			<td>&nbsp;&nbsp;</td>
+			<td class="boldFangsong">检测点1</td>
+			<td class="boldFangsong">检测点2</td>
+			<td width="56" class="boldFangsong">检测点3</td>
+			<td width="57" class="boldFangsong">检测点4</td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">纬度</td>
+			<td align="center"><label id="wd1"></label></td>
+			<td align="center"><label id="wd2"></label></td>
+			<td align="center"><label id="wd3"></label></td>
+			<td align="center"><label id="wd4"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">经度</td>
+			<td align="center"><label id="jd1"></label></td>
+			<td align="center"><label id="jd2"></label></td>
+			<td align="center"><label id="jd3"></label></td>
+			<td align="center"><label id="jd4"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">间距/m</td>
+			<td class="boldFangsong">p/Ω.m</td>
+			<td class="boldFangsong">p/Ω.m</td>
+			<td class="boldFangsong">p/Ω.m</td>
+			<td class="boldFangsong">p/Ω.m</td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">1</td>
+			<td align="center"><label id="v11"></label></td>
+			<td align="center"><label id="v12"></label></td>
+			<td align="center"><label id="v13"></label></td>
+			<td align="center"><label id="v14"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">2</td>
+			<td align="center"><label id="v21"></label></td>
+			<td align="center"><label id="v22"></label></td>
+			<td align="center"><label id="v23"></label></td>
+			<td align="center"><label id="v24"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">3</td>
+			<td align="center"><label id="v31"></label></td>
+			<td align="center"><label id="v32"></label></td>
+			<td align="center"><label id="v33"></label></td>
+			<td align="center"><label id="v34"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">4</td>
+			<td align="center"><label id="v41"></label></td>
+			<td align="center"><label id="v42"></label></td>
+			<td align="center"><label id="v43"></label></td>
+			<td align="center"><label id="v44"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">5</td>
+			<td align="center"><label id="v51"></label></td>
+			<td align="center"><label id="v52"></label></td>
+			<td align="center"><label id="v53"></label></td>
+			<td align="center"><label id="v54"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">6</td>
+			<td align="center"><label id="v61"></label></td>
+			<td align="center"><label id="v62"></label></td>
+			<td align="center"><label id="v63"></label></td>
+			<td align="center"><label id="v64"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">7</td>
+			<td align="center"><label id="v71"></label></td>
+			<td align="center"><label id="v72"></label></td>
+			<td align="center"><label id="v73"></label></td>
+			<td align="center"><label id="v74"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">8</td>
+			<td align="center"><label id="v81"></label></td>
+			<td align="center"><label id="v82"></label></td>
+			<td align="center"><label id="v83"></label></td>
+			<td align="center"><label id="v84"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">9</td>
+			<td align="center"><label id="v91"></label></td>
+			<td align="center"><label id="v92"></label></td>
+			<td align="center"><label id="v93"></label></td>
+			<td align="center"><label id="v94"></label></td>
+		</tr>
+		<tr>
+			<td class="boldFangsong">10</td>
+			<td align="center"><label id="v101"></label></td>
+			<td align="center"><label id="v102"></label></td>
+			<td align="center"><label id="v103"></label></td>
+			<td align="center"><label id="v104"></label></td>
+		</tr>
+		
+	</table>
+	 <!--endprint-->
+</body>
+
+</html>

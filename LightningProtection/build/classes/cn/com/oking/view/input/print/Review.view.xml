@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <AutoForm>
+      <Property name="dataSet">dsReview</Property>
+      <Property name="labelWidth">100</Property>
+      <FieldSet layoutConstraint="align:center">
+        <Property name="width">1024</Property>
+        <Property name="caption">雷电灾害风险评估送达回执（回访表）</Property>
+        <Buttons/>
+        <Children>
+          <AutoForm>
+            <Property name="dataSet">dsReview</Property>
+            <Property name="cols">*,*</Property>
+            <Property name="width">1000</Property>
+            <Property name="labelWidth">100</Property>
+            <Property name="stretchWidth">false</Property>
+            <Property name="height">100</Property>
+            <AutoFormElement>
+              <Property name="name">venue</Property>
+              <Property name="property">venue</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">agent</Property>
+              <Property name="property">agent</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">invoice</Property>
+              <Property name="property">invoice</Property>
+              <Editor>
+                <RadioGroup>
+                  <RadioButton>
+                    <Property name="text">是</Property>
+                    <Property name="value">是</Property>
+                  </RadioButton>
+                  <RadioButton>
+                    <Property name="text">否</Property>
+                    <Property name="value">否</Property>
+                  </RadioButton>
+                </RadioGroup>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">report</Property>
+              <Property name="property">report</Property>
+              <Editor>
+                <RadioGroup>
+                  <RadioButton>
+                    <Property name="text">是</Property>
+                    <Property name="value">是</Property>
+                  </RadioButton>
+                  <RadioButton>
+                    <Property name="text">否</Property>
+                    <Property name="value">否</Property>
+                  </RadioButton>
+                </RadioGroup>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">service</Property>
+              <Property name="property">service</Property>
+              <Editor>
+                <RadioGroup>
+                  <RadioButton>
+                    <Property name="text">是</Property>
+                    <Property name="value">是</Property>
+                  </RadioButton>
+                  <RadioButton>
+                    <Property name="text">否</Property>
+                    <Property name="value">否</Property>
+                  </RadioButton>
+                </RadioGroup>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">eatWithCard</Property>
+              <Property name="property">eatWithCard</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">informationPayment</Property>
+              <Property name="property">informationPayment</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">signForPeople</Property>
+              <Property name="property">signForPeople</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">receiptDate</Property>
+              <Property name="property">receiptDate</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">contact</Property>
+              <Property name="property">contact</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">visitDate</Property>
+              <Property name="property">visitDate</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">returnPeople</Property>
+              <Property name="property">returnPeople</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">returnRecord</Property>
+              <Property name="property">returnRecord</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+        </Children>
+      </FieldSet>
+    </AutoForm>
+    <DataSet id="dsReview">
+      <Property name="dataType">reviewType</Property>
+      <Property name="dataProvider">archiveSecondService#findByProjectId3</Property>
+    </DataSet>
+    <UpdateAction id="updateAction1">
+      <Property name="dataResolver">archiveSecondService#save3</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsReview</Property>
+      </UpdateItem>
+    </UpdateAction>
+  </View>
+</ViewConfig>

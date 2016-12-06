@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <DataSet id="projectBasicInfoSet">
+      <Property name="dataType">projectBasicInfoType</Property>
+      <Property name="dataProvider">projectBasicInfoService#findByProjectId</Property>
+    </DataSet>
+    <DataSet id="technicalParamsSet">
+      <Property name="dataType">technicalParamsType</Property>
+      <Property name="dataProvider">technicalParamsService#findByProjectId</Property>
+    </DataSet>
+    <UpdateAction id="saveAction">
+      <Property name="dataResolver">technicalParamsService#save</Property>
+      <Property name="successMessage">保存成功！！！</Property>
+      <Property name="confirmMessage">是否保存</Property>
+      <Property name="executingMessage">保存中</Property>
+      <UpdateItem>
+        <Property name="dataSet">technicalParamsSet</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <TabControl id="tcShow">
+      <ControlTab>
+        <Property name="caption">项目概述</Property>
+        <Container>
+          <DataSet id="dsProjectBasicInfo">
+            <Property name="dataType">[projectBasicInfoType]</Property>
+            <Property name="dataProvider">projectBasicInfoService#findAll</Property>
+          </DataSet>
+          <ToolBar>
+            <Separator/>
+            <ToolBarButton id="tbbInsert">
+              <Property name="caption">新增</Property>
+            </ToolBarButton>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <DataGrid id="dgshow">
+            <Property name="dataSet">dsProjectBasicInfo</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="showFilterBar">true</Property>
+            <DataColumn name="projectName">
+              <Property name="property">projectName</Property>
+            </DataColumn>
+            <DataColumn name="buildCompany">
+              <Property name="property">buildCompany</Property>
+            </DataColumn>
+            <DataColumn name="projectLocation">
+              <Property name="property">projectLocation</Property>
+            </DataColumn>
+            <DataColumn name="projectArea">
+              <Property name="property">projectArea</Property>
+            </DataColumn>
+            <DataColumn name="projectId">
+              <Property name="property">projectId</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab id="ctinfo">
+        <Property name="caption">详细信息</Property>
+        <Container>
+          <AutoForm>
+            <Property name="dataSet">projectBasicInfoSet</Property>
+            <Property name="cols">*,*,*</Property>
+            <Property name="labelWidth">180</Property>
+            <Property name="hideMode">display</Property>
+            <Property name="visible">false</Property>
+            <AutoFormElement>
+              <Property name="name">reportWriteDate</Property>
+              <Property name="property">reportWriteDate</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">reportPreFinishDate</Property>
+              <Property name="property">reportPreFinishDate</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">reportWitePerson</Property>
+              <Property name="property">reportWitePerson</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+          <FieldSet layoutConstraint="vAlign:top;align:center">
+            <Property name="caption">防雷参数</Property>
+            <Buttons>
+              <Button id="btnSave">
+                <Property name="caption">保存</Property>
+                <Property name="action">saveAction</Property>
+              </Button>
+              <Button id="btndzl">
+                <Property name="caption">电阻率表格</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <AutoForm>
+                <Property name="dataSet">technicalParamsSet</Property>
+                <Property name="labelWidth">100</Property>
+                <AutoFormElement>
+                  <Property name="name">groundFlashDensity</Property>
+                  <Property name="property">groundFlashDensity</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">evaluatePartition</Property>
+                  <Property name="property">evaluatePartition</Property>
+                  <Property name="trigger">listDropDown3</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">hasRectification</Property>
+                  <Property name="property">hasRectification</Property>
+                  <Property name="trigger">listDropDown4</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">lightProtectCategory</Property>
+                  <Property name="property">lightProtectCategory</Property>
+                  <Property name="trigger">listDropDown1</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">buildingHeight</Property>
+                  <Property name="property">buildingHeight</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">maxLightCurrent</Property>
+                  <Property name="property">maxLightCurrent</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">avgLightCurrent</Property>
+                  <Property name="property">avgLightCurrent</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">eveProtectLevel</Property>
+                  <Property name="property">eveProtectLevel</Property>
+                  <Property name="trigger">listDropDown2</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">fireProtectFactor</Property>
+                  <Property name="property">fireProtectFactor</Property>
+                  <Property name="trigger">lddFangHuoYinZi</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">lightRiskValue</Property>
+                  <Property name="property">lightRiskValue</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">resistivity</Property>
+                  <Property name="property">resistivity</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">tremarks</Property>
+                  <Property name="property">tremarks</Property>
+                  <Editor>
+                    <TextArea>
+                      <Property name="height">60</Property>
+                    </TextArea>
+                  </Editor>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">jzwwzFactor</Property>
+                  <Property name="property">jzwwzFactor</Property>
+                  <Property name="trigger">listDropDown9</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">hjFactor</Property>
+                  <Property name="property">hjFactor</Property>
+                  <Property name="trigger">listDropDown10</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">fireDanger</Property>
+                  <Property name="property">fireDanger</Property>
+                  <Property name="trigger">listDropDown11</Property>
+                  <Editor/>
+                </AutoFormElement>
+              </AutoForm>
+              <ListDropDown id="listDropDown1">
+                <Property name="items">Ⅰ类LPS 0.02,Ⅱ类LPS 0.05,Ⅲ类LPS 0.1,Ⅳ类LPS 0.2,未安装LPS防护 1,其它类 0.01,其它类0.001</Property>
+              </ListDropDown>
+              <ListDropDown id="listDropDown2">
+                <Property name="items">Ⅰ级 0.01,Ⅱ级 0.02,Ⅲ~Ⅳ级0.03,未采取匹配的SPD保护 1</Property>
+              </ListDropDown>
+              <ListDropDown id="listDropDown3">
+                <Property name="items">二区,三区,四区,五区,六区</Property>
+              </ListDropDown>
+              <ListDropDown id="listDropDown4">
+                <Property name="items">有,无</Property>
+              </ListDropDown>
+              <ListDropDown id="lddFangHuoYinZi">
+                <Property name="items">无措施 1,固定配置人工灭火器 0.5,火灾自动报警系统 0.25</Property>
+              </ListDropDown>
+              <ListDropDown id="listDropDown6"/>
+              <ListDropDown id="listDropDown7"/>
+              <ListDropDown id="listDropDown8"/>
+              <ListDropDown id="listDropDown11">
+                <Property name="items">爆炸 1,高 0.1,一般 0.01,低 0.001,无 0</Property>
+              </ListDropDown>
+              <ListDropDown id="listDropDown9">
+                <Property name="items">周围有更高的建筑物或树木0.25,周围有相同高度或更矮的建筑物或树木0.5,孤立建筑物：附近无其他建筑物或树木 1,小山顶或山丘上孤立的建筑物 2</Property>
+              </ListDropDown>
+              <ListDropDown id="listDropDown10">
+                <Property name="items">有高层建筑的市区 0,市区 0.1,郊区 0.5,农村 1</Property>
+              </ListDropDown>
+            </Children>
+          </FieldSet>
+        </Container>
+      </ControlTab>
+    </TabControl>
+  </View>
+</ViewConfig>

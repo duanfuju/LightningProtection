@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="tempType" parent="dtDsConditions,technicalParamsType">
+      <PropertyDef name="endDate">
+        <Property name="dataType">Date</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="region">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="startDate">
+        <Property name="dataType">Date</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="reportPrint">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectStateCharge">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="drawingsHas">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="reportReceive">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectStatus">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="costArriveWay">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="reportWitePerson">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="reportCheckPersonnel">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="signingPerson">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectHasDiscount">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="gerHave">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectIndustry">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectIndustryRemark">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="technicalParamsId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="lightProtectCategory">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="groundFlashDensity">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="buildingHeight">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="maxLightCurrent">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="avgLightCurrent">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="eveProtectLevel">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="fireProtectFactor">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="evaluatePartition">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="lightRiskValue">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="hasRectification">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="tremarks">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="resistivity">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="showType" parent="projectBasicInfoType">
+      <PropertyDef name="projectId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="buildCompany">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="contactPerson">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="contactWay">
+        <Property name="dataType">BigDecimal</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <ToolBar>
+      <Separator/>
+      <ToolBarButton id="btnSelect">
+        <Property name="caption">查询</Property>
+      </ToolBarButton>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="caption">导出到Execle</Property>
+        <Property name="action">export2ReportAction1</Property>
+      </ToolBarButton>
+      <Fill/>
+    </ToolBar>
+    <Container>
+      <FieldSet layoutConstraint="align:left;vAlign:top">
+        <Property name="caption">时间地点</Property>
+        <Buttons/>
+        <Children>
+          <AutoForm>
+            <Property name="dataSet">dsDsConditions</Property>
+            <Property name="cols">*,*,*</Property>
+            <AutoFormElement>
+              <Property name="name">startDate</Property>
+              <Property name="property">startDate</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">region</Property>
+              <Property name="property">region</Property>
+              <Property name="label">项目所属区域</Property>
+              <Property name="labelWidth">120</Property>
+              <Property name="trigger">lddregion</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">endDate</Property>
+              <Property name="property">endDate</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+          <ListDropDown id="lddregion">
+            <Property name="items">溧水区,高淳区,江宁区,市区,浦口区,六合区</Property>
+          </ListDropDown>
+        </Children>
+      </FieldSet>
+      <FieldSet layout="anchor" layoutConstraint="align:right;vAlign:top">
+        <Property name="caption">按其他查询条件</Property>
+        <Property name="collapsed">true</Property>
+        <Property name="height">auto</Property>
+        <Buttons/>
+        <Children>
+          <AutoForm>
+            <Property name="dataSet">dsDsConditions</Property>
+            <Property name="cols">*,*,*,*</Property>
+            <Property name="labelWidth">120</Property>
+            <AutoFormElement>
+              <Property name="name">reportPrint</Property>
+              <Property name="property">reportPrint</Property>
+              <Property name="label">报告打印与否</Property>
+              <Property name="trigger">lddreportPrint</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">drawingsHas</Property>
+              <Property name="property">drawingsHas</Property>
+              <Property name="label">按图纸齐全与否</Property>
+              <Property name="trigger">ldddrawingsHas</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">reportReceive</Property>
+              <Property name="property">reportReceive</Property>
+              <Property name="label">按报告领取否</Property>
+              <Property name="trigger">lddreportReceive</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">costArriveWay</Property>
+              <Property name="property">costArriveWay</Property>
+              <Property name="trigger">lddcostArriveWay</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">reportWitePerson</Property>
+              <Property name="property">reportWitePerson</Property>
+              <Property name="trigger">lddreportWitePerson</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">reportCheckPersonnel</Property>
+              <Property name="property">reportCheckPersonnel</Property>
+              <Property name="trigger">lddreportCheckPersonnel</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">signingPerson</Property>
+              <Property name="property">signingPerson</Property>
+              <Property name="trigger">lddsigningPerson</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectHasDiscount</Property>
+              <Property name="property">projectHasDiscount</Property>
+              <Property name="trigger">lddprojectHasDiscount</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">gerHave</Property>
+              <Property name="property">gerHave</Property>
+              <Property name="trigger">lddgerHave</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectIndustry</Property>
+              <Property name="property">projectIndustry</Property>
+              <Property name="trigger">lddprojectIndustry</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectIndustryRemark</Property>
+              <Property name="property">projectIndustryRemark</Property>
+              <Property name="trigger">lddprojectIndustryRemark</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+          <ListDropDown id="lddreportPrint">
+            <Property name="items">是,否</Property>
+          </ListDropDown>
+          <ListDropDown id="lddprojectStateCharge">
+            <Property name="items">转账,支票,现金</Property>
+          </ListDropDown>
+          <ListDropDown id="ldddrawingsHas">
+            <Property name="items">是,否</Property>
+          </ListDropDown>
+          <ListDropDown id="lddreportReceive">
+            <Property name="items">是,否</Property>
+          </ListDropDown>
+          <ListDropDown id="lddcostArriveWay">
+            <Property name="items">转账,支票,现金</Property>
+          </ListDropDown>
+          <ListDropDown id="lddreportWitePerson">
+            <Property name="items">刘佼,黄鹂,姜冰,杨天琦</Property>
+          </ListDropDown>
+          <ListDropDown id="lddreportCheckPersonnel">
+            <Property name="items">田宇航,吴浩,刘佼,杨天琦,黄鹂,姜冰</Property>
+          </ListDropDown>
+          <ListDropDown id="lddsigningPerson">
+            <Property name="items">徐彬彬,吴浩,田宇航,杨天琦,黄鹂,姜冰,刘佼</Property>
+          </ListDropDown>
+          <ListDropDown id="lddprojectHasDiscount">
+            <Property name="items">是,否</Property>
+          </ListDropDown>
+          <ListDropDown id="lddgerHave">
+            <Property name="items">有,无</Property>
+          </ListDropDown>
+          <ListDropDown id="lddprojectIndustry">
+            <Property name="items">商住,学校,化工,其它</Property>
+          </ListDropDown>
+          <ListDropDown id="lddprojectIndustryRemark">
+            <Property name="items">加油站,智能大厦,古建筑</Property>
+          </ListDropDown>
+        </Children>
+      </FieldSet>
+      <FieldSet layout="anchor" layoutConstraint="align:right;vAlign:top">
+        <Property name="caption">防雷参数选择</Property>
+        <Property name="collapsed">true</Property>
+        <Property name="height">auto</Property>
+        <Buttons/>
+        <Children>
+          <AutoForm>
+            <Property name="dataSet">dsDsConditions</Property>
+            <Property name="cols">*,*,*,*</Property>
+            <Property name="labelWidth">120</Property>
+            <AutoFormElement>
+              <Property name="name">lightProtectCategory</Property>
+              <Property name="property">lightProtectCategory</Property>
+              <Property name="trigger">lddlightProtectCategory</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">groundFlashDensity</Property>
+              <Property name="property">groundFlashDensity</Property>
+              <Property name="trigger">lddgroundFlashDensity</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">buildingHeight</Property>
+              <Property name="property">buildingHeight</Property>
+              <Property name="trigger">lddbuildingHeight</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">maxLightCurrent</Property>
+              <Property name="property">maxLightCurrent</Property>
+              <Property name="trigger">lddmaxLightCurrent</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">avgLightCurrent</Property>
+              <Property name="property">avgLightCurrent</Property>
+              <Property name="trigger">lddavgLightCurrent</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">eveProtectLevel</Property>
+              <Property name="property">eveProtectLevel</Property>
+              <Property name="trigger">lddeveProtectLevel</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">evaluatePartition</Property>
+              <Property name="property">evaluatePartition</Property>
+              <Property name="trigger">lddevaluatePartition</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+          <ListDropDown id="lddlightProtectCategory">
+            <Property name="items">Ⅰ类LPS 0.02,Ⅱ类LPS 0.05,Ⅲ类LPS 0.1,Ⅳ类LPS 0.2,未安装LPS防护 1 ,其它类 0.01,其它类0.001</Property>
+          </ListDropDown>
+          <ListDropDown id="lddgroundFlashDensity">
+            <Property name="items">0~1,1~2,2~3,3~4,4~5,5~6,6~7,7~8</Property>
+          </ListDropDown>
+          <ListDropDown id="lddbuildingHeight">
+            <Property name="items">20米以下,20~50米,50~100米,100~150米,150~200米,200~250米,250~300米,300~400米,400~500米</Property>
+          </ListDropDown>
+          <ListDropDown id="lddmaxLightCurrent">
+            <Property name="items">50KA以下,50KA~80KA,80KA~100KA,100KA~120KA,120KA~150KA,150KA~200KA,200KA以上</Property>
+          </ListDropDown>
+          <ListDropDown id="lddavgLightCurrent">
+            <Property name="items">15KA~20KA,20KA~25KA,25KA~30KA,30KA以上</Property>
+          </ListDropDown>
+          <ListDropDown id="lddeveProtectLevel">
+            <Property name="items">Ⅰ级 0.01,Ⅱ级 0.02,Ⅲ~Ⅳ级0.03,Ⅳ类LPS 0.2,未采取匹配的SPD保护 1,其它类 0.01,其它类0.001</Property>
+          </ListDropDown>
+          <ListDropDown id="lddevaluatePartition">
+            <Property name="items">二区,三区,四区,五区,六区</Property>
+          </ListDropDown>
+        </Children>
+      </FieldSet>
+    </Container>
+    <DataSet id="dsDsConditions">
+      <Property name="dataType">tempType</Property>
+    </DataSet>
+    <DataSet id="dsShow">
+      <Property name="dataType">[showType]</Property>
+      <Property name="dataProvider">projectOverviewQuery#findByWhere</Property>
+    </DataSet>
+    <DataGrid id="dgShow">
+      <Property name="dataSet">dsShow</Property>
+      <DataColumn name="projectId">
+        <Property name="property">projectId</Property>
+      </DataColumn>
+      <DataColumn name="projectName">
+        <Property name="property">projectName</Property>
+      </DataColumn>
+      <DataColumn name="buildCompany">
+        <Property name="property">buildCompany</Property>
+      </DataColumn>
+      <DataColumn name="contactPerson">
+        <Property name="property">contactPerson</Property>
+      </DataColumn>
+      <DataColumn name="contactWay">
+        <Property name="property">contactWay</Property>
+      </DataColumn>
+    </DataGrid>
+    <Export2ReportAction id="export2ReportAction1">
+      <Property name="template">dgShow</Property>
+      <Property name="confirmMessage">您确定要将所有的数据导出为Excel吗？</Property>
+      <Property name="dataScope">serverAll</Property>
+      <Property name="executingMessage">正在导出...</Property>
+      <Property name="successMessage">数据导出完毕，请到下载区域打开您导出的Excel文件</Property>
+      <Property name="extension">xlsx</Property>
+      <Property name="service">pbiService#selectByTime</Property>
+    </Export2ReportAction>
+  </View>
+</ViewConfig>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <DataSet id="projectBasicInfoSet">
+      <Property name="dataType">projectBasicInfoType</Property>
+      <Property name="dataProvider">projectBasicInfoService#findByProjectId&#xD;
+</Property>
+    </DataSet>
+    <UpdateAction id="updateAction1">
+      <Property name="dataResolver">projectBasicInfoService#save</Property>
+      <Property name="confirmMessage">正在保存...</Property>
+      <Property name="successMessage">保存成功！！！</Property>
+      <UpdateItem>
+        <Property name="dataSet">projectBasicInfoSet</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <TabControl id="tcShow">
+      <ControlTab>
+        <Property name="caption">项目概述</Property>
+        <Container>
+          <DataSet id="dsProjectBasicInfo">
+            <Property name="dataType">[projectBasicInfoType]</Property>
+            <Property name="dataProvider">projectBasicInfoService#findAll</Property>
+          </DataSet>
+          <DataGrid id="dgshow">
+            <Property name="dataSet">dsProjectBasicInfo</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="showFilterBar">true</Property>
+            <DataColumn name="projectName">
+              <Property name="property">projectName</Property>
+            </DataColumn>
+            <DataColumn name="buildCompany">
+              <Property name="property">buildCompany</Property>
+            </DataColumn>
+            <DataColumn name="projectLocation">
+              <Property name="property">projectLocation</Property>
+            </DataColumn>
+            <DataColumn name="projectArea">
+              <Property name="property">projectArea</Property>
+            </DataColumn>
+            <DataColumn name="projectId">
+              <Property name="property">projectId</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab id="ctinfo">
+        <Property name="caption">详细信息</Property>
+        <Container>
+          <ToolBar>
+            <Separator/>
+            <Button id="btnSave" layoutConstraint="vAlign:center;align:center">
+              <Property name="caption">保存</Property>
+              <Property name="action">updateAction1</Property>
+            </Button>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <Container layout="hbox align:center">
+            <FieldSet layoutConstraint="align:top;vAlign:top">
+              <Property name="caption">报告审核打印</Property>
+              <Property name="width">50%</Property>
+              <Property name="height">40%</Property>
+              <Buttons/>
+              <Children>
+                <AutoForm>
+                  <Property name="dataSet">projectBasicInfoSet</Property>
+                  <Property name="cols">*,*</Property>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="editorWidth">100</Property>
+                  <Property name="readOnly">false</Property>
+                  <AutoFormElement>
+                    <Property name="name">reportCheckPerson</Property>
+                    <Property name="property">reportCheckPerson</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">bgshry</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportCheckDate</Property>
+                    <Property name="property">reportCheckDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportPrintDate</Property>
+                    <Property name="property">reportPrintDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportFeedingDate</Property>
+                    <Property name="property">reportFeedingDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">returnVisitDate</Property>
+                    <Property name="property">returnVisitDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportId</Property>
+                    <Property name="property">reportId</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                </AutoForm>
+              </Children>
+            </FieldSet>
+            <FieldSet layoutConstraint="align:top">
+              <Property name="caption">合同费用登记</Property>
+              <Property name="width">50%</Property>
+              <Property name="height">40%</Property>
+              <Buttons/>
+              <Children>
+                <AutoForm>
+                  <Property name="dataSet">projectBasicInfoSet</Property>
+                  <Property name="cols">*,*</Property>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="editorWidth">100</Property>
+                  <Property name="readOnly">false</Property>
+                  <AutoFormElement>
+                    <Property name="name">contractDeliveryDate</Property>
+                    <Property name="property">contractDeliveryDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">signPerson</Property>
+                    <Property name="property">signPerson</Property>
+                    <Property name="trigger">lddQianShouRenYuan</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">lddQianShouRenYuan</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">costArriveWay</Property>
+                    <Property name="property">costArriveWay</Property>
+                    <Property name="trigger">lddFeiYongDaoZhangXingShi</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">lddFeiYongDaoZhangXingShi</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">costArriveDate</Property>
+                    <Property name="property">costArriveDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">invoiceDate</Property>
+                    <Property name="property">invoiceDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">invoiceFeedingDate</Property>
+                    <Property name="property">invoiceFeedingDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contractPrice</Property>
+                    <Property name="property">contractPrice</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                </AutoForm>
+                <ListDropDown id="lddFeiYongDaoZhangXingShi">
+                  <Property name="items">转账,支票,现金</Property>
+                </ListDropDown>
+                <ListDropDown id="lddQianShouRenYuan">
+                  <Property name="items">徐彬彬,吴浩,田宇航,杨天琦,黄鹂,姜冰,刘佼</Property>
+                </ListDropDown>
+              </Children>
+            </FieldSet>
+          </Container>
+        </Container>
+      </ControlTab>
+    </TabControl>
+  </View>
+</ViewConfig>

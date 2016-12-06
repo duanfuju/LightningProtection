@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View layout="padding:20">
+    <DataSet id="DiscussSituationSet">
+      <Property name="dataType">DiscussSituationType</Property>
+      <Property name="dataProvider">discussSituationService#findByProjectId</Property>
+    </DataSet>
+    <AutoForm>
+      <Property name="dataSet">DiscussSituationSet</Property>
+      <FieldSet layoutConstraint="align:left;vAlign:top">
+        <Property name="caption">项目评估费用计算</Property>
+        <Buttons/>
+        <Children>
+          <AutoForm>
+            <Property name="dataSet">DiscussSituationSet</Property>
+            <Property name="labelWidth">135</Property>
+            <AutoFormElement>
+              <Property name="name">projectTotalInvestment</Property>
+              <Property name="property">projectTotalInvestment</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectConstructionArea</Property>
+              <Property name="property">projectConstructionArea</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectHasDiscount</Property>
+              <Property name="property">projectHasDiscount</Property>
+              <Editor>
+                <TextEditor>
+                  <Property name="trigger">xmsfjm</Property>
+                </TextEditor>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectDiscount</Property>
+              <Property name="property">projectDiscount</Property>
+              <Editor>
+                <TextEditor>
+                  <Property name="trigger">xmjmzk</Property>
+                </TextEditor>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectDiscountReason</Property>
+              <Property name="property">projectDiscountReason</Property>
+              <Editor>
+                <TextEditor>
+                  <Property name="trigger">xmjmyy</Property>
+                </TextEditor>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectConstructionAreaEval</Property>
+              <Property name="property">projectConstructionAreaEval</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectIssue</Property>
+              <Property name="property">projectIssue</Property>
+              <Editor>
+                <TextEditor>
+                  <Property name="trigger">xmqk</Property>
+                </TextEditor>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">deductePriceType</Property>
+              <Property name="property">deductePriceType</Property>
+              <Editor>
+                <TextEditor>
+                  <Property name="trigger">kcfylx</Property>
+                </TextEditor>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectFeesQuotation</Property>
+              <Property name="property">projectFeesQuotation</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+          <ListDropDown id="kcfylx">
+            <Property name="items">类型1,类型2</Property>
+          </ListDropDown>
+          <ListDropDown id="xmsfjm">
+            <Property name="items">是,否</Property>
+          </ListDropDown>
+          <ListDropDown id="xmjmyy">
+            <Property name="items">原由1,原由2</Property>
+          </ListDropDown>
+          <ListDropDown id="xmjmzk">
+            <Property name="items">9,8,7,6,5</Property>
+          </ListDropDown>
+          <ListDropDown id="xmqk">
+            <Property name="items">全刊,补刊</Property>
+          </ListDropDown>
+        </Children>
+      </FieldSet>
+    </AutoForm>
+    <UpdateAction id="saveAction">
+      <Property name="dataResolver">discussSituationService#save</Property>
+      <Property name="successMessage">保存成功！！！</Property>
+      <Property name="confirmMessage">正在保存...</Property>
+      <UpdateItem>
+        <Property name="dataSet">DiscussSituationSet</Property>
+      </UpdateItem>
+    </UpdateAction>
+  </View>
+</ViewConfig>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <TabControl id="tcShow">
+      <ControlTab>
+        <Property name="caption">项目概述</Property>
+        <Container>
+          <DataSet id="dsProjectBasicInfo">
+            <Property name="dataType">[projectBasicInfoType]</Property>
+            <Property name="dataProvider">projectBasicInfoService#findAll</Property>
+          </DataSet>
+          <ToolBar>
+            <Separator/>
+            <ToolBarButton id="tbbInsert">
+              <Property name="caption">新增</Property>
+            </ToolBarButton>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <DataGrid id="dgshow">
+            <Property name="dataSet">dsProjectBasicInfo</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="showFilterBar">true</Property>
+            <DataColumn name="projectName">
+              <Property name="property">projectName</Property>
+            </DataColumn>
+            <DataColumn name="buildCompany">
+              <Property name="property">buildCompany</Property>
+            </DataColumn>
+            <DataColumn name="projectLocation">
+              <Property name="property">projectLocation</Property>
+            </DataColumn>
+            <DataColumn name="projectArea">
+              <Property name="property">projectArea</Property>
+            </DataColumn>
+            <DataColumn name="projectId">
+              <Property name="property">projectId</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab id="ctinfo">
+        <Property name="caption">详细信息</Property>
+        <Container>
+          <DataSet id="dsProjectConclusion">
+            <Property name="userData"></Property>
+            <Property name="dataType">ProjectConclusion</Property>
+            <Property name="dataProvider">projectConclusionServices#findByProjectId</Property>
+          </DataSet>
+          <FieldSet id="fsProjectConclusion" layout="padding:80,30" layoutConstraint="padding:30,8">
+            <Property name="caption">项目总结(详细)</Property>
+            <Buttons>
+              <Button id="btnSave">
+                <Property name="caption">保存</Property>
+                <Property name="action">saveAction</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <AutoForm layoutConstraint="padding:50">
+                <Property name="labelWidth">100</Property>
+                <Property name="cols">*,*</Property>
+                <Property name="dataSet">dsProjectConclusion</Property>
+                <Property name="showHintMessage">true</Property>
+                <Property name="visible">true</Property>
+                <AutoFormElement>
+                  <Property name="name">reportPrint</Property>
+                  <Property name="property">reportPrint</Property>
+                  <Editor>
+                    <TextArea/>
+                  </Editor>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectStateCharge</Property>
+                  <Property name="property">projectStateCharge</Property>
+                  <Editor>
+                    <TextArea/>
+                  </Editor>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">drawingsHas</Property>
+                  <Property name="property">drawingsHas</Property>
+                  <Editor>
+                    <TextArea/>
+                  </Editor>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">reportReceive</Property>
+                  <Property name="property">reportReceive</Property>
+                  <Editor>
+                    <TextArea/>
+                  </Editor>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectStatus</Property>
+                  <Property name="property">projectStatus</Property>
+                  <Editor>
+                    <TextArea/>
+                  </Editor>
+                </AutoFormElement>
+              </AutoForm>
+              <UpdateAction id="saveAction">
+                <Property name="dataResolver">projectConclusionServices#save</Property>
+                <Property name="confirmMessage">正在保存...</Property>
+                <Property name="successMessage">保存成功！！！</Property>
+                <UpdateItem>
+                  <Property name="dataSet">dsProjectConclusion</Property>
+                </UpdateItem>
+              </UpdateAction>
+            </Children>
+          </FieldSet>
+        </Container>
+      </ControlTab>
+    </TabControl>
+  </View>
+</ViewConfig>

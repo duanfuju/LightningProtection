@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View listener="spring:initUserPlace#onPlaceInit">
+    <ClientEvent name="onReady">&#xD;
+var hour=document.getElementById('hour');&#xD;
+var minute=document.getElementById('minute');&#xD;
+var second=document.getElementById('second');&#xD;
+&#xD;
+function AddZero(n){&#xD;
+	if(n&lt;10){&#xD;
+		return '0'+n;&#xD;
+	}&#xD;
+	return ''+n;&#xD;
+}&#xD;
+&#xD;
+function showTime(){&#xD;
+	var oDate=new Date();&#xD;
+	var iHours=oDate.getHours();&#xD;
+	var iMinute=oDate.getMinutes();&#xD;
+	var iSecond=oDate.getSeconds();&#xD;
+	hour.innerHTML=AddZero(iHours);&#xD;
+	minute.innerHTML=AddZero(iMinute);&#xD;
+	second.innerHTML=AddZero(iSecond);&#xD;
+}&#xD;
+&#xD;
+showTime();&#xD;
+setInterval(showTime,1000);&#xD;
+</ClientEvent>
+    <HtmlContainer>
+      <Property name="width">70%</Property>
+      <IFrame layoutConstraint="left">
+        <Property name="path">map/index_show_city.jsp</Property>
+        <Property name="height">100%</Property>
+        <Property name="width">100%</Property>
+        <Property name="visible">true</Property>
+      </IFrame>
+    </HtmlContainer>
+    <HtmlContainer layoutConstraint="right">
+      <Property name="content">&lt;div class=&quot;box&quot;>&#xD;
+	&lt;ul>&#xD;
+		&lt;li>&lt;span id=&quot;hour&quot;>15&lt;/span>&lt;span>时&lt;/span>&lt;/li>&#xD;
+		&lt;li>&lt;span id=&quot;minute&quot;>26&lt;/span>&lt;span>分&lt;/span>&lt;/li>&#xD;
+		&lt;li>&lt;span id=&quot;second&quot;>40&lt;/span>&lt;span>秒&lt;/span>&lt;/li>&#xD;
+	&lt;/ul>&#xD;
+&lt;/div>&#xD;
+&#xD;
+&lt;div id=&quot;d&quot;>&#xD;
+					&lt;div id=&quot;dall&quot;>&#xD;
+						&lt;div class=&quot;clock&quot;>&#xD;
+							&lt;table width=&quot;220&quot; cellpadding=&quot;0&quot; cellspacing=&quot;1&quot; border=&quot;1&quot;&#xD;
+								align=&quot;center&quot; id=&quot;tb_4&quot;>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>预警信息&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>14&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>短临预报&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>162&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>短期预报&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>269&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>插播消息&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>621>&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>通知通告&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>342&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>欢迎信息&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>12&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>小贴士&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>635&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>图片发布&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>223&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>视频发布&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>75&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>报纸阅读&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>315&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>电视直播&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>12&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>热点新闻&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>143&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>生活指数&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>243&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>天气预报&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>352&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td width=&quot;70px&quot;>周边城市&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>123&lt;/td>&#xD;
+							&lt;td style=&quot;width:70px&quot;>天气实况&lt;/td>&#xD;
+							&lt;td style=&quot;color:#2894FF;&quot;>541&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+						&lt;tr>&#xD;
+							&lt;td colspan=&quot;4&quot; style=&quot;font-size:12px;&quot;>更新时间：2015-04-02 14:50&lt;/td>&#xD;
+						&lt;/tr>&#xD;
+							&lt;/table>&#xD;
+						&lt;/div>&#xD;
+					&lt;/div>&#xD;
+				&lt;/div></Property>
+      <Property name="width">29%</Property>
+    </HtmlContainer>
+  </View>
+</ViewConfig>

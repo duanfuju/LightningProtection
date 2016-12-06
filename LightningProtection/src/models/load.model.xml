@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model>
+  <DataType name="InfoConnectionBasic">
+    <Property name="matchType">cn.com.oking.entity.InfoConnectionBasic</Property>
+    <PropertyDef name="icbid">
+      <Property name="label">基本信息连接表编号</Property>
+    </PropertyDef>
+    <PropertyDef name="projectid">
+      <Property name="label">项目编号</Property>
+    </PropertyDef>
+    <PropertyDef name="filedid">
+      <Property></Property>
+      <Property name="label">文件编号</Property>
+    </PropertyDef>
+    <PropertyDef name="doctype">
+      <Property></Property>
+      <Property name="label">文件类型</Property>
+    </PropertyDef>
+    <PropertyDef name="instructions">
+      <Property></Property>
+      <Property name="label">指令</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="SysFileInformation" meta="x:165;y:15">
+    <Property name="matchType">cn.com.oking.entity.SysFileInformation</Property>
+    <PropertyDef name="id">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="showPath">
+      <Property></Property>
+      <Property name="label">显示路径</Property>
+    </PropertyDef>
+    <PropertyDef name="fileName">
+      <Property></Property>
+      <Property name="label">文件名称(上传前名称)</Property>
+    </PropertyDef>
+    <PropertyDef name="associationId">
+      <Property></Property>
+      <Property name="label">文件关联编号</Property>
+    </PropertyDef>
+    <PropertyDef name="sort">
+      <Property></Property>
+      <Property name="label">顺序</Property>
+    </PropertyDef>
+    <PropertyDef name="savaPath">
+      <Property></Property>
+      <Property name="label">保存路径</Property>
+    </PropertyDef>
+    <PropertyDef name="realName">
+      <Property></Property>
+      <Property name="label">实际名称</Property>
+    </PropertyDef>
+    <PropertyDef name="upPeople">
+      <Property></Property>
+      <Property name="label">上传人</Property>
+    </PropertyDef>
+    <PropertyDef name="upTime">
+      <Property name="dataType">DateTime</Property>
+      <Property name="label">上传时间</Property>
+    </PropertyDef>
+    <PropertyDef name="delPeople">
+      <Property></Property>
+      <Property name="label">删除人</Property>
+    </PropertyDef>
+    <PropertyDef name="delState">
+      <Property></Property>
+      <Property name="label">删除状态</Property>
+    </PropertyDef>
+    <PropertyDef name="delTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">删除时间</Property>
+    </PropertyDef>
+    <PropertyDef name="delWjstate">
+      <Property></Property>
+      <Property name="label">文件删除状态</Property>
+    </PropertyDef>
+    <PropertyDef name="delWjtime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">文件删除时间</Property>
+    </PropertyDef>
+    <PropertyDef name="upType">
+      <Property></Property>
+      <Property name="label">更新类型</Property>
+    </PropertyDef>
+    <PropertyDef name="projectApproval">
+      <Property></Property>
+      <Property name="label">立项批文</Property>
+    </PropertyDef>
+    <PropertyDef name="paHave">
+      <Property></Property>
+      <Property name="label">立项批文有否</Property>
+    </PropertyDef>
+    <PropertyDef name="geologicalExplorationReport">
+      <Property></Property>
+      <Property name="label">地勘报告</Property>
+    </PropertyDef>
+    <PropertyDef name="gerHave">
+      <Property></Property>
+      <Property name="label">地勘报告有否</Property>
+    </PropertyDef>
+    <PropertyDef name="drawings">
+      <Property></Property>
+      <Property name="label">图纸资料</Property>
+    </PropertyDef>
+    <PropertyDef name="dHave">
+      <Property></Property>
+      <Property name="label">图纸资料有否</Property>
+    </PropertyDef>
+    <PropertyDef name="feasibilityReport">
+      <Property></Property>
+      <Property name="label">可行性报告</Property>
+    </PropertyDef>
+    <PropertyDef name="frHave">
+      <Property></Property>
+      <Property name="label">可行性报告有否</Property>
+    </PropertyDef>
+    <PropertyDef name="otherInformation">
+      <Property></Property>
+      <Property name="label">其他资料</Property>
+    </PropertyDef>
+    <PropertyDef name="oiHave">
+      <Property></Property>
+      <Property name="label">其他资料有否</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="ProjectConclusion">
+    <Property name="matchType">cn.com.oking.entity.ProjectConclusion</Property>
+    <PropertyDef name="pcId">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="reportPrint">
+      <Property></Property>
+      <Property name="label">报告打印</Property>
+    </PropertyDef>
+    <PropertyDef name="projectStateCharge">
+      <Property></Property>
+      <Property name="label">项目收费状态</Property>
+    </PropertyDef>
+    <PropertyDef name="drawingsHas">
+      <Property></Property>
+      <Property name="label">图纸齐全</Property>
+    </PropertyDef>
+    <PropertyDef name="reportReceive">
+      <Property></Property>
+      <Property name="label">报告领取</Property>
+    </PropertyDef>
+    <PropertyDef name="projectStatus">
+      <Property></Property>
+      <Property name="label">项目状态</Property>
+    </PropertyDef>
+  </DataType>
+</Model>

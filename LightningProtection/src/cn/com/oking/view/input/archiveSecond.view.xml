@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <TabControl id="tcShow">
+      <ControlTab>
+        <Property name="caption">项目概述</Property>
+        <Container>
+          <DataSet id="dsProjectBasicInfo">
+            <Property name="dataType">[projectBasicInfoType]</Property>
+            <Property name="dataProvider">projectBasicInfoService#findAll</Property>
+          </DataSet>
+          <ToolBar>
+            <Separator/>
+            <ToolBarButton id="tbbInsert">
+              <Property name="caption">新增</Property>
+            </ToolBarButton>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <DataGrid id="dgShow">
+            <Property name="dataSet">dsProjectBasicInfo</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="showFilterBar">true</Property>
+            <DataColumn name="projectName">
+              <Property name="property">projectName</Property>
+            </DataColumn>
+            <DataColumn name="buildCompany">
+              <Property name="property">buildCompany</Property>
+            </DataColumn>
+            <DataColumn name="projectLocation">
+              <Property name="property">projectLocation</Property>
+            </DataColumn>
+            <DataColumn name="projectArea">
+              <Property name="property">projectArea</Property>
+            </DataColumn>
+            <DataColumn name="projectId">
+              <Property name="property">projectId</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab id="ctinfo">
+        <Property name="caption">详细信息</Property>
+        <Container>
+          <AutoForm>
+            <Property name="dataSet">dsRemr</Property>
+            <Property name="cols">*,*,*</Property>
+            <Property name="labelWidth">150</Property>
+            <FieldSet layoutConstraint="vAlign:center;align:center">
+              <Property name="caption">雷评技术会谈记录</Property>
+              <Property name="width">1024</Property>
+              <Buttons>
+                <Button id="btnSave" layoutConstraint="align:center">
+                  <Property name="caption">保存</Property>
+                  <Property name="action">updateAction1</Property>
+                </Button>
+                <Button id="btnPrint">
+                  <Property name="caption">打印</Property>
+                  <Property name="renderTo">btnPrint</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <AutoForm>
+                  <Property name="dataSet">dsRemr</Property>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="cols">*,*,*,*</Property>
+                  <AutoFormElement>
+                    <Property name="name">preliminaryOpinions</Property>
+                    <Property name="property">preliminaryOpinions</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">poDate</Property>
+                    <Property name="property">poDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">integritySupervisor</Property>
+                    <Property name="property">integritySupervisor</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectInvestment</Property>
+                    <Property name="property">projectInvestment</Property>
+                    <Property name="hideMode">display</Property>
+                    <Property name="visible">false</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">constructionArea</Property>
+                    <Property name="property">constructionArea</Property>
+                    <Property name="hideMode">display</Property>
+                    <Property name="visible">false</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectContacts</Property>
+                    <Property name="property">projectContacts</Property>
+                    <Property name="hideMode">display</Property>
+                    <Property name="visible">false</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contact</Property>
+                    <Property name="property">contact</Property>
+                    <Property name="hideMode">display</Property>
+                    <Property name="visible">false</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">meetingTime</Property>
+                    <Property name="property">meetingTime</Property>
+                    <Property name="hideMode">display</Property>
+                    <Property name="visible">false</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectSector</Property>
+                    <Property name="property">projectSector</Property>
+                    <Property name="hideMode">display</Property>
+                    <Property name="visible">false</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">rpacNumber</Property>
+                    <Property name="property">rpacNumber</Property>
+                    <Property name="hideMode">display</Property>
+                    <Property name="visible">false</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">venue</Property>
+                    <Property name="property">venue</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">mainContent</Property>
+                    <Property name="property">mainContent</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">participants</Property>
+                    <Property name="property">participants</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">agent</Property>
+                    <Property name="property">agent</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">auditOpinion</Property>
+                    <Property name="property">auditOpinion</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">director</Property>
+                    <Property name="property">director</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">auditDate</Property>
+                    <Property name="property">auditDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">supervisionAdvice</Property>
+                    <Property name="property">supervisionAdvice</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">saDate</Property>
+                    <Property name="property">saDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                </AutoForm>
+              </Children>
+            </FieldSet>
+          </AutoForm>
+          <UpdateAction id="updateAction1">
+            <Property name="dataResolver">archiveSecondService#save2</Property>
+            <UpdateItem>
+              <Property name="dataSet">dsRemr</Property>
+            </UpdateItem>
+          </UpdateAction>
+          <DataSet id="dsRemr">
+            <Property name="dataType">remrType</Property>
+            <Property name="dataProvider">archiveSecondService#findByProjectId2</Property>
+          </DataSet>
+        </Container>
+      </ControlTab>
+    </TabControl>
+  </View>
+</ViewConfig>

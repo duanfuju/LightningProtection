@@ -1,0 +1,34 @@
+.d-accordion .d-section.current-section .d-section-caption-bar {
+  color: #ffffff;
+  background-color: #15a4fa;
+  height:30px;
+  font-size: 10pt;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  font-weight: bold;
+}
+
+
+.d-accordion .d-section .d-section-caption-bar {
+  color: #ffffff;
+  background-color: #15a4fa;
+    height:30px;
+  font-size: 10pt;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  font-weight: bold;
+}
+
+.d-tree .row{
+	color: black;
+ 	background-color: #c5e8fe;
+ 	height:20px;
+  font-size: 9pt;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+
+.d-tree .current-row {
+  color: black;
+  background-color: #e6edf1;
+  height:20px;
+  font-size: 9pt;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+}

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <HtmlContainer>
+      <TextEditor id="rpacNumber">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#rpacNumber</Property>
+      </TextEditor>
+      <TextEditor id="organizer">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#organizer</Property>
+      </TextEditor>
+      <TextEditor id="supervisor">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#supervisor</Property>
+      </TextEditor>
+      <TextEditor id="undertake1">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#undertake1</Property>
+      </TextEditor>
+      <TextEditor id="signForPeople1">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#signForPeople1</Property>
+      </TextEditor>
+      <TextEditor id="date1">
+        <Property name="dataType">Date</Property>
+        <Property name="renderOn">#date1</Property>
+      </TextEditor>
+      <TextEditor id="undertake2">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#undertake2</Property>
+      </TextEditor>
+      <TextEditor id="signForPeople2">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#signForPeople2</Property>
+      </TextEditor>
+      <TextEditor id="date2">
+        <Property name="dataType">Date</Property>
+        <Property name="renderOn">#date2</Property>
+      </TextEditor>
+      <TextEditor id="undertake3">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#undertake3</Property>
+      </TextEditor>
+      <TextEditor id="signForPeople3">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#signForPeople3</Property>
+      </TextEditor>
+      <TextEditor id="date3">
+        <Property name="dataType">Date</Property>
+        <Property name="renderOn">#date3</Property>
+      </TextEditor>
+      <TextEditor id="undertake4">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#undertake4</Property>
+      </TextEditor>
+      <TextEditor id="signForPeople4">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#signForPeople4</Property>
+      </TextEditor>
+      <TextEditor id="date4">
+        <Property name="dataType">Date</Property>
+        <Property name="renderOn">#date4</Property>
+      </TextEditor>
+      <TextEditor id="undertake5">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#undertake5</Property>
+      </TextEditor>
+      <TextEditor id="signForPeople5">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#signForPeople5</Property>
+      </TextEditor>
+      <TextEditor id="date5">
+        <Property name="dataType">Date</Property>
+        <Property name="renderOn">#date5</Property>
+      </TextEditor>
+      <TextEditor id="undertake6">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#undertake6</Property>
+      </TextEditor>
+      <TextEditor id="signForPeople6">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#signForPeople6</Property>
+      </TextEditor>
+      <TextEditor id="date6">
+        <Property name="dataType">Date</Property>
+        <Property name="renderOn">#date6</Property>
+      </TextEditor>
+      <TextEditor id="implControlMain1">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implControlMain1</Property>
+      </TextEditor>
+      <TextEditor id="implPeople1">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implPeople1</Property>
+      </TextEditor>
+      <TextEditor id="implControlMain2">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implControlMain2</Property>
+      </TextEditor>
+      <TextEditor id="implPeople2">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implPeople2</Property>
+      </TextEditor>
+      <TextEditor id="review2">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">review2</Property>
+      </TextEditor>
+      <TextEditor id="implControlMain3">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implControlMain3</Property>
+      </TextEditor>
+      <TextEditor id="implPeople3">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implPeople3</Property>
+      </TextEditor>
+      <TextEditor id="review3">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#review3</Property>
+      </TextEditor>
+      <TextEditor id="implControlMain4">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implControlMain4</Property>
+      </TextEditor>
+      <TextEditor id="implPeople4">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#implPeople4</Property>
+      </TextEditor>
+      <TextEditor id="review4">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#review4</Property>
+      </TextEditor>
+      <TextEditor id="checkDepartment">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#checkDepartment</Property>
+      </TextEditor>
+      <TextEditor id="checkPeople">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#checkPeople</Property>
+      </TextEditor>
+      <TextEditor id="checkDate">
+        <Property name="dataType">Date</Property>
+        <Property name="renderOn">#checkDate</Property>
+      </TextEditor>
+      <TextEditor id="review1">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#review1</Property>
+      </TextEditor>
+      <TextArea id="checkKey">
+        <Property name="height">50</Property>
+        <Property name="width">500</Property>
+        <Property name="renderOn">#checkKey</Property>
+      </TextArea>
+      <TextArea id="noImpl">
+        <Property name="width">500</Property>
+        <Property name="height">50</Property>
+        <Property name="renderOn">#noImpl</Property>
+      </TextArea>
+      <CheckBox id="measuresSituation1">
+        <Property name="renderOn">#measuresSituation1</Property>
+        <Property name="ignored">false</Property>
+      </CheckBox>
+      <CheckBox id="measuresSituation2">
+        <Property name="renderOn">#measuresSituation2</Property>
+      </CheckBox>
+      <CheckBox id="measuresSituation3">
+        <Property name="renderOn">#measuresSituation3</Property>
+      </CheckBox>
+      <CheckBox id="measuresSituation4">
+        <Property name="renderOn">#measuresSituation4</Property>
+      </CheckBox>
+      <TextArea id="remark">
+        <Property name="renderOn">#remark</Property>
+        <Property name="height">50</Property>
+        <Property name="width">1024</Property>
+      </TextArea>
+    </HtmlContainer>
+    <AjaxAction id="LoadAction">
+      <Property name="service">archiveSecondService#findByProjectId1</Property>
+      <Property name="successMessage">加载成功！！！</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

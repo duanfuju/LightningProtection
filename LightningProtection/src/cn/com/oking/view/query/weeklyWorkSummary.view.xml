@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="tempType" parent="dtDsConditions">
+      <PropertyDef name="endDate">
+        <Property name="dataType">Date</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="startDate">
+        <Property name="dataType">Date</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <ToolBar>
+      <Separator/>
+      <ToolBarButton id="btnSave">
+        <Property name="caption">保存所有修改</Property>
+        <Property name="action">updateAction1</Property>
+      </ToolBarButton>
+      <Separator/>
+      <ToolBarButton id="btnSelect">
+        <Property name="caption">查询</Property>
+      </ToolBarButton>
+      <Separator/>
+      <ToolBarButton id="btnExport">
+        <Property name="caption">导出到execle</Property>
+      </ToolBarButton>
+      <Separator/>
+      <Fill/>
+    </ToolBar>
+    <Export2ReportAction id="export2ReportAction1">
+      <Property name="template">dgBusinessNegotiation,dgReportCompiled</Property>
+      <Property name="confirmMessage">您确定要将所有的数据导出为Excel吗？</Property>
+      <Property name="dataScope">serverAll</Property>
+      <Property name="executingMessage">正在导出...</Property>
+      <Property name="successMessage">数据导出完毕，请到下载区域打开您导出的Excel文件</Property>
+      <Property name="extension">xlsx</Property>
+      <Property name="service">pbiService#selectByTime</Property>
+    </Export2ReportAction>
+    <Container>
+      <FieldSet layoutConstraint="align:left;vAlign:top">
+        <Property name="caption">时间地点</Property>
+        <Buttons/>
+        <Children>
+          <AutoForm>
+            <Property name="dataSet">dsDsConditions</Property>
+            <Property name="cols">*,*,*</Property>
+            <AutoFormElement>
+              <Property name="name">startDate</Property>
+              <Property name="property">startDate</Property>
+              <Editor>
+                <TextEditor id="text"/>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">endDate</Property>
+              <Property name="property">endDate</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+        </Children>
+      </FieldSet>
+    </Container>
+    <DataSet id="dsDsConditions">
+      <Property name="dataType">tempType</Property>
+    </DataSet>
+    <DataSet id="dsShow">
+      <Property name="dataType">[projectBasicInfoType]</Property>
+      <Property name="dataProvider">pbiService#selectByTime</Property>
+    </DataSet>
+    <TabControl>
+      <ControlTab>
+        <Property name="caption">业务洽谈</Property>
+        <DataGrid id="dgBusinessNegotiation">
+          <Property name="dataSet">dsShow</Property>
+          <DataColumn name="projectId">
+            <Property name="property">projectId</Property>
+          </DataColumn>
+          <DataColumn name="projectName">
+            <Property name="property">projectName</Property>
+          </DataColumn>
+          <DataColumn name="buildCompany">
+            <Property name="property">buildCompany</Property>
+          </DataColumn>
+          <DataColumn name="contactPerson">
+            <Property name="property">contactPerson</Property>
+          </DataColumn>
+          <DataColumn name="contactWay">
+            <Property name="property">contactWay</Property>
+          </DataColumn>
+          <DataColumn name="projectOverview">
+            <Property name="property">projectOverview</Property>
+          </DataColumn>
+          <DataColumn name="contractSigning">
+            <Property name="property">contractSigning</Property>
+          </DataColumn>
+          <DataColumn name="reportStatus">
+            <Property name="property">reportStatus</Property>
+          </DataColumn>
+          <DataColumn name="contractPrice">
+            <Property name="property">contractPrice</Property>
+          </DataColumn>
+          <DataColumn name="contractSigningPerson">
+            <Property name="property">contractSigningPerson</Property>
+          </DataColumn>
+          <DataColumn name="remark1">
+            <Property name="property">remark1</Property>
+          </DataColumn>
+        </DataGrid>
+      </ControlTab>
+      <ControlTab>
+        <Property name="caption">报告编制</Property>
+        <DataGrid id="dgReportCompiled">
+          <Property name="dataSet">dsShow</Property>
+          <DataColumn name="projectId">
+            <Property name="property">projectId</Property>
+          </DataColumn>
+          <DataColumn name="projectName">
+            <Property name="property">projectName</Property>
+          </DataColumn>
+          <DataColumn name="buildCompany">
+            <Property name="property">buildCompany</Property>
+          </DataColumn>
+          <DataColumn name="contactPerson">
+            <Property name="property">contactPerson</Property>
+          </DataColumn>
+          <DataColumn name="contactWay">
+            <Property name="property">contactWay</Property>
+          </DataColumn>
+          <DataColumn name="contractSigningPerson">
+            <Property name="property">contractSigningPerson</Property>
+          </DataColumn>
+          <DataColumn name="checkPersonnel">
+            <Property name="property">checkPersonnel</Property>
+          </DataColumn>
+          <DataColumn name="completion">
+            <Property name="property">completion</Property>
+          </DataColumn>
+          <DataColumn name="remark2">
+            <Property name="property">remark2</Property>
+          </DataColumn>
+        </DataGrid>
+      </ControlTab>
+    </TabControl>
+    <UpdateAction id="updateAction1">
+      <Property name="dataResolver">pbiService#saveAll</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsShow</Property>
+      </UpdateItem>
+    </UpdateAction>
+  </View>
+</ViewConfig>

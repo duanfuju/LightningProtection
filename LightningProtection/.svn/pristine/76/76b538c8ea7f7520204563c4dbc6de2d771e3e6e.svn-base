@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <DataSet id="DiscussSituationSet">
+      <Property name="dataType">DiscussSituationType</Property>
+      <Property name="dataProvider">discussSituationService#findByProjectId</Property>
+    </DataSet>
+    <UpdateAction id="saveAction">
+      <Property name="dataResolver">discussSituationService#save</Property>
+      <Property name="successMessage">保存成功！！！</Property>
+      <Property name="confirmMessage">正在保存...</Property>
+      <UpdateItem>
+        <Property name="dataSet">DiscussSituationSet</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <TabControl id="tcShow">
+      <ControlTab>
+        <Property name="caption">项目概述</Property>
+        <Container>
+          <DataSet id="dsProjectBasicInfo">
+            <Property name="dataType">[projectBasicInfoType]</Property>
+            <Property name="dataProvider">projectBasicInfoService#findAll</Property>
+          </DataSet>
+          <ToolBar>
+            <Separator/>
+            <ToolBarButton id="tbbInsert">
+              <Property name="caption">新增</Property>
+            </ToolBarButton>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <DataGrid id="dgshow">
+            <Property name="dataSet">dsProjectBasicInfo</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="showFilterBar">true</Property>
+            <DataColumn name="projectName">
+              <Property name="property">projectName</Property>
+            </DataColumn>
+            <DataColumn name="buildCompany">
+              <Property name="property">buildCompany</Property>
+            </DataColumn>
+            <DataColumn name="projectLocation">
+              <Property name="property">projectLocation</Property>
+            </DataColumn>
+            <DataColumn name="projectArea">
+              <Property name="property">projectArea</Property>
+            </DataColumn>
+            <DataColumn name="projectId">
+              <Property name="property">projectId</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab id="ctinfo">
+        <Property name="caption">详细信息</Property>
+        <Container>
+          <ToolBar>
+            <Separator/>
+            <Button id="btnSave" layoutConstraint="align:right;vAlign:center">
+              <Property name="caption">保存</Property>
+              <Property name="action">saveAction</Property>
+            </Button>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <FieldSet layoutConstraint="align:left;vAlign:top">
+            <Property name="caption">市场洽谈情况</Property>
+            <Property name="width">60%</Property>
+            <Buttons/>
+            <Children>
+              <AutoForm>
+                <Property name="dataSet">DiscussSituationSet</Property>
+                <Property name="labelWidth">135</Property>
+                <AutoFormElement>
+                  <Property name="name">contractSigningCondition</Property>
+                  <Property name="property">contractSigningCondition</Property>
+                  <Property name="trigger">lddHeTongQianDingZhuangKuang</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">weatherCondition</Property>
+                  <Property name="property">weatherCondition</Property>
+                  <Property name="trigger">lddTianQiQingKuang</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">contractSigningDate</Property>
+                  <Property name="property">contractSigningDate</Property>
+                  <Property name="hideMode">display</Property>
+                  <Property name="visible">false</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">contractDiscussDate</Property>
+                  <Property name="property">contractDiscussDate</Property>
+                  <Property name="visible">false</Property>
+                  <Property name="hideMode">display</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">signingPerson</Property>
+                  <Property name="property">signingPerson</Property>
+                  <Property name="visible">false</Property>
+                  <Property name="hideMode">display</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">marketDiscussPerson</Property>
+                  <Property name="property">marketDiscussPerson</Property>
+                  <Property name="hideMode">display</Property>
+                  <Property name="visible">false</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">checkDate</Property>
+                  <Property name="property">checkDate</Property>
+                  <Property name="hideMode">display</Property>
+                  <Property name="visible">false</Property>
+                  <Editor/>
+                </AutoFormElement>
+              </AutoForm>
+            </Children>
+          </FieldSet>
+          <FieldSet layoutConstraint="align:left;vAlign:center">
+            <Property name="caption">项目评估费用计算</Property>
+            <Property name="width">60%</Property>
+            <Buttons>
+              <Button id="btnPrint">
+                <Property name="caption">项目评估报价单打印</Property>
+                <Property name="renderTo">btnPrint</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <AutoForm>
+                <Property name="dataSet">DiscussSituationSet</Property>
+                <Property name="labelWidth">135</Property>
+                <AutoFormElement>
+                  <Property name="name">projectDiscount</Property>
+                  <Property name="property">projectDiscount</Property>
+                  <Property name="trigger">lddXiangMuJianMianZheKou</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectConstructionAreaEval</Property>
+                  <Property name="property">projectConstructionAreaEval</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectFeesQuotation</Property>
+                  <Property name="property">projectFeesQuotation</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectTotalInvestment</Property>
+                  <Property name="property">projectTotalInvestment</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectConstructionArea</Property>
+                  <Property name="property">projectConstructionArea</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectHasDiscount</Property>
+                  <Property name="property">projectHasDiscount</Property>
+                  <Property name="trigger">lddXiangMuShiFouJianMian</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectIssue</Property>
+                  <Property name="property">projectIssue</Property>
+                  <Property name="trigger">lddXiangMuQuanKan</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">deductePriceType</Property>
+                  <Property name="property">deductePriceType</Property>
+                  <Property name="trigger">lddKouChuFeiYongLeiXing</Property>
+                  <Editor/>
+                </AutoFormElement>
+                <AutoFormElement>
+                  <Property name="name">projectDiscountReason</Property>
+                  <Property name="property">projectDiscountReason</Property>
+                  <Property name="trigger">lddXiangMuJianMianYuanYou</Property>
+                  <Editor/>
+                </AutoFormElement>
+              </AutoForm>
+            </Children>
+          </FieldSet>
+          <AutoForm>
+            <Property name="dataSet">DiscussSituationSet</Property>
+            <Property name="width">900</Property>
+            <AutoFormElement>
+              <Property name="name">msessionRecord</Property>
+              <Property name="property">msessionRecord</Property>
+              <Editor>
+                <TextArea/>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">msessionRemarks</Property>
+              <Property name="property">msessionRemarks</Property>
+              <Editor>
+                <TextArea/>
+              </Editor>
+            </AutoFormElement>
+          </AutoForm>
+        </Container>
+      </ControlTab>
+    </TabControl>
+    <ListDropDown id="lddHeTongQianDingZhuangKuang">
+      <Property name="items">已签,未签,流程中</Property>
+    </ListDropDown>
+    <ListDropDown id="lddTianQiQingKuang">
+      <Property name="items">晴,多云,阴,雨</Property>
+    </ListDropDown>
+    <ListDropDown id="lddXiangMuJianMianZheKou">
+      <Property name="items">一折,二折,三折,四折,五折,六折,七折,八折,九折,十折</Property>
+    </ListDropDown>
+    <ListDropDown id="lddXiangMuQuanKan">
+      <Property name="items">全刊,补刊</Property>
+    </ListDropDown>
+    <ListDropDown id="lddXiangMuJianMianYuanYou">
+      <Property name="items">保障房、廉租房和经济适用房、幼儿园和中小学校,政府重点工程并享受政府特殊政策的项目,对于设备费或土地费占总投资比例过高的,区局需要协调雷评费用减免的</Property>
+    </ListDropDown>
+    <ListDropDown id="lddXiangMuShiFouJianMian">
+      <Property name="items">是,否</Property>
+    </ListDropDown>
+    <ListDropDown id="lddKouChuFeiYongLeiXing">
+      <Property name="items">安置房,中小学校安工程,其它</Property>
+    </ListDropDown>
+  </View>
+</ViewConfig>

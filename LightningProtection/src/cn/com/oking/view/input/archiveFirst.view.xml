@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Dialog id="fileDialog">
+      <Property name="caption">文件上传</Property>
+      <Property name="width">480</Property>
+      <Property name="height">300</Property>
+      <Buttons/>
+      <Children>
+        <IFrame id="fileIFrame">
+          <Property name="path">cn.com.oking.upload.upload.d</Property>
+        </IFrame>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <UpdateAction id="actionUpdate">
+      <Property name="dataResolver">infoConnectBasicServices#saveAll</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsinfoConnectBasic</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <DataSet id="dsMaterialImage"/>
+    <DataSet id="dsinfoConnectBasic">
+      <Property name="dataProvider">infoConnectBasicServices#getAll</Property>
+      <Property name="dataType">[InfoConnectionBasic]</Property>
+      <Property name="loadMode">lazy</Property>
+    </DataSet>
+    <DataSet id="dsArchiveFirst">
+      <Property name="dataType">ArchiveFirstType</Property>
+      <Property name="dataProvider">archiveFirstService#findByProjectId</Property>
+    </DataSet>
+    <DataSet id="dssfi">
+      <Property name="dataType">[SysFileInformation]</Property>
+      <Property name="dataProvider">infoConnectBasicServices#getupAll</Property>
+    </DataSet>
+    <TabControl id="tcShow">
+      <ControlTab>
+        <Property name="caption">项目概述</Property>
+        <Container>
+          <DataSet id="dsProjectBasicInfo">
+            <Property name="dataType">[projectBasicInfoType]</Property>
+            <Property name="dataProvider">projectBasicInfoService#findAll</Property>
+          </DataSet>
+          <ToolBar>
+            <Separator/>
+            <ToolBarButton id="tbbInsert">
+              <Property name="caption">新增</Property>
+            </ToolBarButton>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <DataGrid id="dgShow">
+            <Property name="dataSet">dsProjectBasicInfo</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="showFilterBar">true</Property>
+            <DataColumn name="projectName">
+              <Property name="property">projectName</Property>
+            </DataColumn>
+            <DataColumn name="buildCompany">
+              <Property name="property">buildCompany</Property>
+            </DataColumn>
+            <DataColumn name="projectLocation">
+              <Property name="property">projectLocation</Property>
+            </DataColumn>
+            <DataColumn name="projectArea">
+              <Property name="property">projectArea</Property>
+            </DataColumn>
+            <DataColumn name="projectId">
+              <Property name="property">projectId</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab id="ctinfo">
+        <Property name="caption">详细信息</Property>
+        <Container>
+          <ToolBar>
+            <Fill/>
+            <DataPilot>
+              <Property name="itemCodes">-,x,|</Property>
+              <Property name="dataSet">dsinfoConnectBasic</Property>
+            </DataPilot>
+            <ToolBarButton>
+              <Property name="caption">保存</Property>
+              <Property name="action">actionUpdate</Property>
+            </ToolBarButton>
+            <Button id="btnShowDialog">
+              <Property name="caption">上传</Property>
+            </Button>
+            <ToolBarButton id="btnDownload">
+              <Property name="caption">下载</Property>
+            </ToolBarButton>
+          </ToolBar>
+          <SplitPanel>
+            <Property name="direction">left</Property>
+            <Property name="position">40%</Property>
+            <MainControl>
+              <DataGrid id="dgshow">
+                <Property name="dataSet">dssfi</Property>
+                <Property name="readOnly">false</Property>
+                <RowNumColumn/>
+                <DataColumn name="id">
+                  <Property name="property">id</Property>
+                  <Property name="visible">false</Property>
+                </DataColumn>
+                <DataColumn name="fileName">
+                  <Property name="property">fileName</Property>
+                </DataColumn>
+                <DataColumn name="associationId">
+                  <Property name="property">associationId</Property>
+                </DataColumn>
+                <DataColumn name="savaPath">
+                  <Property name="property">savaPath</Property>
+                </DataColumn>
+                <DataColumn name="realName">
+                  <Property name="property">realName</Property>
+                </DataColumn>
+                <DataColumn name="upPeople">
+                  <Property name="property">upPeople</Property>
+                </DataColumn>
+                <DataColumn name="upTime">
+                  <Property name="property">upTime</Property>
+                </DataColumn>
+              </DataGrid>
+            </MainControl>
+            <SideControl>
+              <AutoForm>
+                <Property name="dataSet">dsArchiveFirst</Property>
+                <FieldSet id="fsArchiveFirst" layout="native">
+                  <Property name="caption">项目基本信息</Property>
+                  <Property name="width">400</Property>
+                  <Buttons>
+                    <Button id="btnSave">
+                      <Property name="caption">保存</Property>
+                      <Property name="action">saveAction</Property>
+                    </Button>
+                  </Buttons>
+                  <Children>
+                    <AutoForm>
+                      <Property name="dataSet">dsArchiveFirst</Property>
+                      <Property name="labelWidth">80</Property>
+                      <Property name="cols">*</Property>
+                      <AutoFormElement>
+                        <Property name="name">afId</Property>
+                        <Property name="property">afId</Property>
+                        <Property name="visible">false</Property>
+                        <Property name="hideMode">display</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">projectId</Property>
+                        <Property name="property">projectId</Property>
+                        <Property name="hideMode">display</Property>
+                        <Property name="visible">false</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">documentDate</Property>
+                        <Property name="property">documentDate</Property>
+                        <Property name="hideMode">display</Property>
+                        <Property name="visible">false</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">controlNumber</Property>
+                        <Property name="property">controlNumber</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">projectName</Property>
+                        <Property name="property">projectName</Property>
+                        <Property name="visible">false</Property>
+                        <Property name="hideMode">display</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">classificationNumber</Property>
+                        <Property name="property">classificationNumber</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">constructionUnit</Property>
+                        <Property name="property">constructionUnit</Property>
+                        <Property name="hideMode">display</Property>
+                        <Property name="visible">false</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">cnPersonnel</Property>
+                        <Property name="property">cnPersonnel</Property>
+                        <Property name="trigger">personName</Property>
+                        <Property name="hideMode">display</Property>
+                        <Property name="visible">false</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">reportStaff</Property>
+                        <Property name="property">reportStaff</Property>
+                        <Property name="trigger">personName</Property>
+                        <Property name="hideMode">display</Property>
+                        <Property name="visible">false</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                      <AutoFormElement>
+                        <Property name="name">reportCheckPersonnel</Property>
+                        <Property name="property">reportCheckPersonnel</Property>
+                        <Property name="trigger">personName</Property>
+                        <Property name="visible">false</Property>
+                        <Editor/>
+                      </AutoFormElement>
+                    </AutoForm>
+                    <ListDropDown id="personName">
+                      <Property name="items">张三,李四,王五</Property>
+                    </ListDropDown>
+                    <UpdateAction id="saveAction">
+                      <Property name="dataResolver">archiveFirstService#save</Property>
+                      <Property name="successMessage">添加成功！！！</Property>
+                      <Property name="executingMessage">添加中，请等待....</Property>
+                      <Property name="confirmMessage">正在保存...</Property>
+                      <UpdateItem>
+                        <Property name="dataSet">dsArchiveFirst</Property>
+                      </UpdateItem>
+                    </UpdateAction>
+                  </Children>
+                </FieldSet>
+              </AutoForm>
+            </SideControl>
+          </SplitPanel>
+        </Container>
+      </ControlTab>
+    </TabControl>
+  </View>
+</ViewConfig>

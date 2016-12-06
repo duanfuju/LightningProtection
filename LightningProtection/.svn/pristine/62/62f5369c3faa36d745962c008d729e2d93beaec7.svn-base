@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+#outputPageHeader()
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<style type="text/css">
+	td{
+		border-left:1px solid #ccc;
+		border-top:1px solid #ccc;
+	}
+	table{
+		border-right:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+	}
+	.tds{
+		width: auto;
+	}
+	label{
+	   border-left: 0;
+	   border-right: 0;
+	   border-top: 0;
+	   border-bottom: 1px solid #000000;
+	}
+</style>
+</head>
+<body>
+<!--startprint-->
+<div align="center">
+    <fieldset style="border-color:#ccc;"  >
+   	<legend align="left">（普通）合同管理风险防控措施执行单</legend>
+     <table width="100%" align="center" >
+       	<tr>
+        	<th>风险防控编号</th>
+            <th align="center"><label id="rpacNumber"></label></th>
+            <th>主办单位</th>
+            <th align="center"><label id="organizer"></label></th>
+            <th>监督人</th>
+            <th align="center"><label id="supervisor"></label></th>
+        </tr>
+       </table>
+        <fieldset style="border-color:#ccc">
+         <legend align="left">工作流程</legend>
+        <table width="100%" align="center" >
+            <tr>
+                <td class="tds">工作环节</td>
+                <td>承办部门</td>
+                <td>签收人</td>
+                <td>日期</td>
+                <td class="tds">工作环节</td>
+                <td>承办部门</td>
+                <td>签收人</td>
+                <td>日期</td>
+            </tr>
+            <tr>
+                <td class="tds">1.业务洽谈、协商</td>
+                <td align="center"><label id="undertake1"></label></td>
+                <td align="center"><label id="signForPeople1"></label></td>
+                <td align="center"><label id="date1"></label></td>
+                <td class="tds">4.签订合同</td>
+                <td align="center"><label id="undertake4"></label></td>
+                <td align="center"><label id="signForPeople4"></label></td>
+                <td align="center"><label id="date4"></label></td>
+            </tr>
+            <tr>
+                <td class="tds">2.行程合同初稿&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td align="center"><label id="undertake2"></label></td>
+                <td align="center"><label id="signForPeople2"></label></td>
+                <td align="center"><label id="date2"></label></td>
+                <td class="tds">5.合同执行</td>
+                <td align="center"><label id="undertake5"></label></td>
+                <td align="center"><label id="signForPeople5"></label></td>
+                <td align="center"><label id="date5"></label></td>
+            </tr>
+            <tr>
+                <td class="tds">3.合同审核(审批)</td>
+                <td align="center"><label id="undertake3"></label></td>
+                <td align="center"><label id="signForPeople3"></label></td>
+                <td align="center"><label id="date3"></label></td>
+                <td class="tds">6.资料归档</td>
+                <td align="center"><label id="undertake6"></label></td>
+                <td align="center"><label id="signForPeople6"></label></td>
+                <td align="center"><label id="date6"></label></td>
+            </tr>
+        </table>
+        </fieldset>
+        <br/>
+        <fieldset style="border-color:#ccc" >
+         <legend align="left">风险防控措施落实情况</legend>
+        <table align="center">
+            <tr>
+                <td>实施控制环节</td>
+                <td>风险防控措施</td>
+                <td>措施落实情况载体</td>
+                <td>措施落实情况</td>
+                <td>实施控制主体</td>
+                <td>措施实施人</td>
+                <td>复核人</td>
+            </tr>
+            <tr>
+                <td rowspan="2" >业务洽谈、协商</td>
+                <td rowspan="2">
+                    <p>1.需要2人以上进行业务洽谈，
+                    重大合同有监督机构参与。
+                     <br/>
+                    2.建立定期回访客户制度，
+                    畅通客户投诉渠道，
+                    发现有损害单位利益行为，
+                    追究当事人责任。</p>
+                </td>
+                <td rowspan="2">
+                    <p>1.合同业务洽谈管理制度
+                    和监督规定。
+                    <br/>
+                    2.合同定期回访记录和责
+                    任追究通报文件。</p>
+                </td>
+                <td align="center"><label id="measuresSituation1"></label></td>
+                <td align="center" rowspan="2"><label id="implControlMain1"></label></td>
+                <td align="center" rowspan="2"><label id="implPeople1"></label></td>
+                <td align="center" rowspan="2"><label id="review1"></label></td>
+            </tr>
+            <tr>
+                <td align="center"><label id="measuresSituation2"></label></td>
+            </tr>
+            <tr>
+                <td>合同审核（审批）</td>
+                <td>
+                    2.对重大、业务内容复杂的合同，
+                    单位领导班子集体审核。
+                </td>
+                <td>
+                    2.会议记录。
+                </td>
+               <td align="center"><label id="measuresSituation3"></label></td>
+                <td align="center"><label id="implControlMain3"></label></td>
+                <td align="center"><label id="implPeople3"></label></td>
+                <td align="center"><label id="review3"></label></td>
+            </tr>
+             <tr>
+                <td>合同执行</td>
+                <td>
+                    定期检查合同执行情况，
+                    发现违规行为，
+                    追究相关人员责任。
+                </td>
+                <td>
+                    1.合同执行情况检查报告
+                    和责任追究通报文件。
+                </td>
+                 <td align="center"><label id="measuresSituation4"></label></td>
+                <td align="center"><label id="implControlMain4"></label></td>
+                <td align="center"><label id="implPeople4"></label></td>
+                <td align="center"><label id="review4"></label></td>
+            </tr>
+            <tr>
+                <td rowspan="2">抽查情况</td>
+                <td colspan="3" rowspan="2" align="center">
+                    <p>重点抽查的防控环节：<label id="checkKey"  style="height: 50px"></label></p>
+                    <br/>
+                     <br/>
+                	 <p>  未落实的措施：<label id="noImpl" style="height: 50px" ></label></p>
+                </td>
+                <td colspan="3" align="center">
+                    抽查部门：<label id="checkDepartment"></label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">抽查人：<label id="checkPeople"></label></td>
+                <td align="center">日期：<label id="checkDate"></label></td>
+            </tr>
+            <tr>
+                <td colspan="7" align="center" >备注：<label id="remark"></label>
+				</td>
+            </tr>
+        </table>
+        </fieldset>
+    </fieldset>
+   </div>
+ <!--endprint-->
+</body>
+</html>

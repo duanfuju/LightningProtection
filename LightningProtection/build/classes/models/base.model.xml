@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model>
+  <DataType name="projectBasicInfoType">
+    <Property name="matchType">cn.com.oking.entity.ProjectBasicInfo</Property>
+    <PropertyDef name="projectName">
+      <Property></Property>
+      <Property name="label">项目名称</Property>
+    </PropertyDef>
+    <PropertyDef name="buildCompany">
+      <Property></Property>
+      <Property name="label">建设单位</Property>
+    </PropertyDef>
+    <PropertyDef name="fileDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">建档日期</Property>
+    </PropertyDef>
+    <PropertyDef name="dataCompleteDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">资料齐全日期</Property>
+    </PropertyDef>
+    <PropertyDef name="contactPerson">
+      <Property></Property>
+      <Property name="label">联系人</Property>
+    </PropertyDef>
+    <PropertyDef name="contactWay">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">联系方式</Property>
+    </PropertyDef>
+    <PropertyDef name="projectLocation">
+      <Property></Property>
+      <Property name="label">项目所在地</Property>
+    </PropertyDef>
+    <PropertyDef name="projectArea">
+      <Property></Property>
+      <Property name="label">项目所属区域</Property>
+    </PropertyDef>
+    <PropertyDef name="projectLat">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">项目所在地纬度</Property>
+    </PropertyDef>
+    <PropertyDef name="projectLongitude">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">项目所在地经度</Property>
+    </PropertyDef>
+    <PropertyDef name="evaluateCompany">
+      <Property></Property>
+      <Property name="label">评估单位</Property>
+    </PropertyDef>
+    <PropertyDef name="projectIndustry">
+      <Property></Property>
+      <Property name="label">项目所属行业</Property>
+    </PropertyDef>
+    <PropertyDef name="projectIndustryRemark">
+      <Property></Property>
+      <Property name="label">项目所属行业备注</Property>
+    </PropertyDef>
+    <PropertyDef name="reportWriteDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">报告编制日期</Property>
+    </PropertyDef>
+    <PropertyDef name="reportPreFinishDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">报告预完成日期</Property>
+    </PropertyDef>
+    <PropertyDef name="reportFinishDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">报告完成日期</Property>
+    </PropertyDef>
+    <PropertyDef name="reportWitePerson">
+      <Property></Property>
+      <Property name="label">报告编制人员</Property>
+    </PropertyDef>
+    <PropertyDef name="reportCheckPerson">
+      <Property></Property>
+      <Property name="label">报告审核人员</Property>
+    </PropertyDef>
+    <PropertyDef name="reportCheckDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">报告审核日期</Property>
+    </PropertyDef>
+    <PropertyDef name="contractSigningPerson">
+      <Property></Property>
+      <Property name="label">合同签订人员</Property>
+    </PropertyDef>
+    <PropertyDef name="contractSigningDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">合同签订日期</Property>
+    </PropertyDef>
+    <PropertyDef name="contractReceiveDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">合同签收日期</Property>
+    </PropertyDef>
+    <PropertyDef name="contractDeliveryDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">合同交送日期</Property>
+    </PropertyDef>
+    <PropertyDef name="contractPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">合同金额</Property>
+    </PropertyDef>
+    <PropertyDef name="reportPrintDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">报告打印日期</Property>
+    </PropertyDef>
+    <PropertyDef name="signPerson">
+      <Property></Property>
+      <Property name="label">签收人员</Property>
+    </PropertyDef>
+    <PropertyDef name="reportFeedingDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">报告送取日期</Property>
+    </PropertyDef>
+    <PropertyDef name="costArriveWay">
+      <Property></Property>
+      <Property name="label">费用到账形式</Property>
+    </PropertyDef>
+    <PropertyDef name="costArriveDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">费用到账日期</Property>
+    </PropertyDef>
+    <PropertyDef name="costArrivePrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">费用到账金额</Property>
+    </PropertyDef>
+    <PropertyDef name="invoicePrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">发票开具金额</Property>
+    </PropertyDef>
+    <PropertyDef name="invoiceDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">发票开具日期</Property>
+    </PropertyDef>
+    <PropertyDef name="invoiceFeedingDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">发票送取日期</Property>
+    </PropertyDef>
+    <PropertyDef name="invoicePerson">
+      <Property></Property>
+      <Property name="label">发票开具人员</Property>
+    </PropertyDef>
+    <PropertyDef name="returnVisitDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">回访日期</Property>
+    </PropertyDef>
+    <PropertyDef name="archiveId">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">档案编号</Property>
+    </PropertyDef>
+    <PropertyDef name="record">
+      <Property></Property>
+      <Property name="label">会谈记录</Property>
+    </PropertyDef>
+    <PropertyDef name="remarks">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label">项目编号</Property>
+    </PropertyDef>
+    <PropertyDef name="projectOverview">
+      <Property></Property>
+      <Property name="label">项目概况</Property>
+    </PropertyDef>
+    <PropertyDef name="contractSigning">
+      <Property></Property>
+      <Property name="label">合同签订情况</Property>
+    </PropertyDef>
+    <PropertyDef name="reportStatus">
+      <Property></Property>
+      <Property name="label">报告状态</Property>
+    </PropertyDef>
+    <PropertyDef name="remark1">
+      <Property></Property>
+      <Property name="label">备注1</Property>
+    </PropertyDef>
+    <PropertyDef name="completion">
+      <Property></Property>
+      <Property name="label">完成情况</Property>
+    </PropertyDef>
+    <PropertyDef name="checkPersonnel">
+      <Property></Property>
+      <Property name="label">校核人员</Property>
+    </PropertyDef>
+    <PropertyDef name="remark2">
+      <Property></Property>
+      <Property name="label">备注2</Property>
+    </PropertyDef>
+    <PropertyDef name="reportId">
+      <Property></Property>
+      <Property name="label">报告编号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="DiscussSituationType">
+    <Property name="matchType">cn.com.oking.entity.DiscussSituation</Property>
+    <PropertyDef name="situationId">
+      <Property name="label">洽谈情况ID</Property>
+    </PropertyDef>
+    <PropertyDef name="contractSigningDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">合同签订日期</Property>
+    </PropertyDef>
+    <PropertyDef name="contractSigningCondition">
+      <Property></Property>
+      <Property name="label">合同签订状况</Property>
+    </PropertyDef>
+    <PropertyDef name="contractDiscussDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">合同洽谈日期</Property>
+    </PropertyDef>
+    <PropertyDef name="weatherCondition">
+      <Property></Property>
+      <Property name="label">天气情况</Property>
+    </PropertyDef>
+    <PropertyDef name="signingPerson">
+      <Property></Property>
+      <Property name="label">签订人员</Property>
+    </PropertyDef>
+    <PropertyDef name="marketDiscussPerson">
+      <Property></Property>
+      <Property name="label">合同洽谈人员</Property>
+    </PropertyDef>
+    <PropertyDef name="checkDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">检测日期</Property>
+    </PropertyDef>
+    <PropertyDef name="drawingCondition">
+      <Property></Property>
+      <Property name="label">图纸资料状况</Property>
+    </PropertyDef>
+    <PropertyDef name="projectLat">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">项目所在地纬度</Property>
+    </PropertyDef>
+    <PropertyDef name="projectLongitude">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">项目所在地经度</Property>
+    </PropertyDef>
+    <PropertyDef name="reportCondition">
+      <Property></Property>
+      <Property name="label">报告状况</Property>
+    </PropertyDef>
+    <PropertyDef name="msessionRecord">
+      <Property></Property>
+      <Property name="label">会谈记录</Property>
+    </PropertyDef>
+    <PropertyDef name="msessionRemarks">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+    <PropertyDef name="projectTotalInvestment">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">项目总投资</Property>
+    </PropertyDef>
+    <PropertyDef name="projectConstructionArea">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">项目建筑面积</Property>
+    </PropertyDef>
+    <PropertyDef name="projectHasDiscount">
+      <Property></Property>
+      <Property name="label">项目是否减免</Property>
+    </PropertyDef>
+    <PropertyDef name="projectConstructionAreaEval">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">待评项目面积</Property>
+    </PropertyDef>
+    <PropertyDef name="projectIssue">
+      <Property></Property>
+      <Property name="label">项目全刊/补刊</Property>
+    </PropertyDef>
+    <PropertyDef name="deductePriceType">
+      <Property></Property>
+      <Property name="label">扣除费用类型</Property>
+    </PropertyDef>
+    <PropertyDef name="projectFeesQuotation">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">项目收费报价</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label">项目编号</Property>
+    </PropertyDef>
+    <PropertyDef name="projectDiscountReason">
+      <Property></Property>
+      <Property name="label">项目减免原由</Property>
+    </PropertyDef>
+    <PropertyDef name="projectDiscount">
+      <Property></Property>
+      <Property name="label">项目减免折扣</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="technicalParamsType">
+    <Property name="matchType">cn.com.oking.entity.TechnicalParams</Property>
+    <PropertyDef name="technicalParamsId">
+      <Property name="label">技术参数ID</Property>
+    </PropertyDef>
+    <PropertyDef name="lightProtectCategory">
+      <Property></Property>
+      <Property name="label">防雷类别</Property>
+    </PropertyDef>
+    <PropertyDef name="groundFlashDensity">
+      <Property name="label">地闪密度</Property>
+    </PropertyDef>
+    <PropertyDef name="buildingHeight">
+      <Property name="label">建筑高度</Property>
+    </PropertyDef>
+    <PropertyDef name="maxLightCurrent">
+      <Property name="label">最大雷电流</Property>
+    </PropertyDef>
+    <PropertyDef name="avgLightCurrent">
+      <Property name="label">平均雷电流</Property>
+    </PropertyDef>
+    <PropertyDef name="eveProtectLevel">
+      <Property name="label">电子防护等级</Property>
+    </PropertyDef>
+    <PropertyDef name="fireProtectFactor">
+      <Property></Property>
+      <Property name="label">防火措施因子</Property>
+    </PropertyDef>
+    <PropertyDef name="evaluatePartition">
+      <Property></Property>
+      <Property name="label">评估分区</Property>
+    </PropertyDef>
+    <PropertyDef name="lightRiskValue">
+      <Property name="label">雷击风险值</Property>
+    </PropertyDef>
+    <PropertyDef name="hasRectification">
+      <Property></Property>
+      <Property name="label">有无整改意见</Property>
+    </PropertyDef>
+    <PropertyDef name="tremarks">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+    <PropertyDef name="resistivity">
+      <Property name="label">电阻率</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label">项目编号</Property>
+    </PropertyDef>
+    <PropertyDef name="jzwwzFactor">
+      <Property></Property>
+      <Property name="label">建筑物位置因子</Property>
+    </PropertyDef>
+    <PropertyDef name="hjFactor">
+      <Property></Property>
+      <Property name="label">环境因子</Property>
+    </PropertyDef>
+    <PropertyDef name="fireDanger">
+      <Property></Property>
+      <Property name="label">火灾危险</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="PrintCostType" meta="x:240;y:45">
+    <Property name="matchType">cn.com.oking.entity.PrintCost</Property>
+    <PropertyDef name="printId">
+      <Property></Property>
+      <Property name="label">打印ID</Property>
+    </PropertyDef>
+    <PropertyDef name="projectDetails">
+      <Property></Property>
+      <Property name="required">false</Property>
+      <Property name="label">项目明细</Property>
+    </PropertyDef>
+    <PropertyDef name="costPrintDate">
+      <Property name="dataType">Date</Property>
+      <Property name="required">false</Property>
+      <Property name="label">打印日期</Property>
+    </PropertyDef>
+    <PropertyDef name="printCount">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">打印张数</Property>
+    </PropertyDef>
+    <PropertyDef name="printPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">打印费用</Property>
+    </PropertyDef>
+    <PropertyDef name="copyCount">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">复印张数</Property>
+    </PropertyDef>
+    <PropertyDef name="copyPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">复印费用</Property>
+    </PropertyDef>
+    <PropertyDef name="colorPrintCount">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">彩打份数</Property>
+    </PropertyDef>
+    <PropertyDef name="colorPrintPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">彩打费用</Property>
+    </PropertyDef>
+    <PropertyDef name="bindCount">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">装订数量</Property>
+    </PropertyDef>
+    <PropertyDef name="bindPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">装订费用</Property>
+    </PropertyDef>
+    <PropertyDef name="totalPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">合计费用</Property>
+    </PropertyDef>
+    <PropertyDef name="remark">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label">项目ID</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="dzlType">
+    <Property name="matchType">cn.com.oking.entity.Dzl</Property>
+    <PropertyDef name="dzlId">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="checkDate">
+      <Property name="dataType">Date</Property>
+    </PropertyDef>
+    <PropertyDef name="correctionFactor">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="weather">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="checkPerson">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="wd1">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="wd2">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="wd3">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="wd4">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="jd1">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="jd2">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="jd3">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="jd4">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v11">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v12">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v13">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v14">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v21">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v22">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v23">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v24">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v31">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v32">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v33">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v34">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v41">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v42">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v43">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v44">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v51">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v52">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v53">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v54">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v61">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v62">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v63">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v64">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v71">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v72">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v73">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v74">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v81">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v82">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v83">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v84">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v91">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v92">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v93">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v94">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v101">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v102">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v103">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="v104">
+      <Property></Property>
+    </PropertyDef>
+    <PropertyDef name="remark">
+      <Property></Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="ArchiveFirstType">
+    <Property name="matchType">cn.com.oking.entity.ArchiveFirst</Property>
+    <PropertyDef name="afId">
+      <Property></Property>
+      <Property name="label">资料归档编号</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label">项目ID 外键</Property>
+    </PropertyDef>
+    <PropertyDef name="documentDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">建档日期</Property>
+    </PropertyDef>
+    <PropertyDef name="controlNumber">
+      <Property></Property>
+      <Property name="label">防控编号</Property>
+    </PropertyDef>
+    <PropertyDef name="projectName">
+      <Property></Property>
+      <Property name="label">项目名称</Property>
+    </PropertyDef>
+    <PropertyDef name="classificationNumber">
+      <Property></Property>
+      <Property name="label">档案编号</Property>
+    </PropertyDef>
+    <PropertyDef name="constructionUnit">
+      <Property></Property>
+      <Property name="label">建设单位</Property>
+    </PropertyDef>
+    <PropertyDef name="cnPersonnel">
+      <Property></Property>
+      <Property name="label">合同洽谈人员</Property>
+    </PropertyDef>
+    <PropertyDef name="reportStaff">
+      <Property></Property>
+      <Property name="label">报告编制人员</Property>
+    </PropertyDef>
+    <PropertyDef name="reportCheckPersonnel">
+      <Property></Property>
+      <Property name="label">报告校核人员</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="remrType">
+    <Property name="matchType">cn.com.oking.entity.RayEvaluationMeetingRecord</Property>
+    <PropertyDef name="remrId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label">项目ID 外键</Property>
+    </PropertyDef>
+    <PropertyDef name="projectInvestment">
+      <Property></Property>
+      <Property name="label">项目投资</Property>
+    </PropertyDef>
+    <PropertyDef name="constructionArea">
+      <Property></Property>
+      <Property name="label">建筑面积</Property>
+    </PropertyDef>
+    <PropertyDef name="projectContacts">
+      <Property></Property>
+      <Property name="label">项目联系人</Property>
+    </PropertyDef>
+    <PropertyDef name="contact">
+      <Property></Property>
+      <Property name="label">联系方式</Property>
+    </PropertyDef>
+    <PropertyDef name="meetingTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">会谈时间</Property>
+    </PropertyDef>
+    <PropertyDef name="venue">
+      <Property></Property>
+      <Property name="label">会谈地点</Property>
+    </PropertyDef>
+    <PropertyDef name="projectSector">
+      <Property></Property>
+      <Property name="label">项目所属行业</Property>
+    </PropertyDef>
+    <PropertyDef name="rpacNumber">
+      <Property></Property>
+      <Property name="label">风险防控编号</Property>
+    </PropertyDef>
+    <PropertyDef name="mainContent">
+      <Property></Property>
+      <Property name="label">主要内容</Property>
+    </PropertyDef>
+    <PropertyDef name="participants">
+      <Property></Property>
+      <Property name="label">委托方参加人员</Property>
+    </PropertyDef>
+    <PropertyDef name="preliminaryOpinions">
+      <Property></Property>
+      <Property name="label">初步意见</Property>
+    </PropertyDef>
+    <PropertyDef name="agent">
+      <Property></Property>
+      <Property name="label">经办人</Property>
+    </PropertyDef>
+    <PropertyDef name="poDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">初步意见的日期</Property>
+    </PropertyDef>
+    <PropertyDef name="auditOpinion">
+      <Property></Property>
+      <Property name="label">审核意见</Property>
+    </PropertyDef>
+    <PropertyDef name="director">
+      <Property></Property>
+      <Property name="label">主任</Property>
+    </PropertyDef>
+    <PropertyDef name="auditDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">审核意见的日期</Property>
+    </PropertyDef>
+    <PropertyDef name="supervisionAdvice">
+      <Property></Property>
+      <Property name="label">监督意见</Property>
+    </PropertyDef>
+    <PropertyDef name="integritySupervisor">
+      <Property></Property>
+      <Property name="label">廉政监督员</Property>
+    </PropertyDef>
+    <PropertyDef name="saDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">监督意见日期</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="performSingleType">
+    <Property name="matchType">cn.com.oking.entity.PerformSingle</Property>
+    <PropertyDef name="psId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label"> 项目ID 外键</Property>
+    </PropertyDef>
+    <PropertyDef name="rpacNumber">
+      <Property></Property>
+      <Property name="label">风险防控编号</Property>
+    </PropertyDef>
+    <PropertyDef name="organizer">
+      <Property></Property>
+      <Property name="label">主办单位</Property>
+    </PropertyDef>
+    <PropertyDef name="supervisor">
+      <Property></Property>
+      <Property name="label">监督人</Property>
+    </PropertyDef>
+    <PropertyDef name="undertake1">
+      <Property></Property>
+      <Property name="label">承办部门1</Property>
+    </PropertyDef>
+    <PropertyDef name="signForPeople1">
+      <Property></Property>
+      <Property name="label">签收人1</Property>
+    </PropertyDef>
+    <PropertyDef name="date1">
+      <Property name="dataType">Date</Property>
+      <Property name="label">日期1</Property>
+    </PropertyDef>
+    <PropertyDef name="undertake2">
+      <Property></Property>
+      <Property name="label">承办部门2</Property>
+    </PropertyDef>
+    <PropertyDef name="signForPeople2">
+      <Property></Property>
+      <Property name="label">签收人2</Property>
+    </PropertyDef>
+    <PropertyDef name="date2">
+      <Property name="dataType">Date</Property>
+      <Property name="label">日期2 </Property>
+    </PropertyDef>
+    <PropertyDef name="undertake3">
+      <Property></Property>
+      <Property name="label">承办部门3</Property>
+    </PropertyDef>
+    <PropertyDef name="signForPeople3">
+      <Property></Property>
+      <Property name="label">签收人3</Property>
+    </PropertyDef>
+    <PropertyDef name="date3">
+      <Property name="dataType">Date</Property>
+      <Property name="label">日期3</Property>
+    </PropertyDef>
+    <PropertyDef name="undertake4">
+      <Property></Property>
+      <Property name="label">承办部门4</Property>
+    </PropertyDef>
+    <PropertyDef name="signForPeople4">
+      <Property></Property>
+      <Property name="label">签收人4</Property>
+    </PropertyDef>
+    <PropertyDef name="date4">
+      <Property name="dataType">Date</Property>
+      <Property name="label">日期4 </Property>
+    </PropertyDef>
+    <PropertyDef name="undertake5">
+      <Property></Property>
+      <Property name="label">承办部门5</Property>
+    </PropertyDef>
+    <PropertyDef name="signForPeople5">
+      <Property></Property>
+      <Property name="label">签收人5</Property>
+    </PropertyDef>
+    <PropertyDef name="date5">
+      <Property name="dataType">Date</Property>
+      <Property name="label">日期5</Property>
+    </PropertyDef>
+    <PropertyDef name="undertake6">
+      <Property></Property>
+      <Property name="label">承办部门6</Property>
+    </PropertyDef>
+    <PropertyDef name="signForPeople6">
+      <Property></Property>
+      <Property name="label">签收人6</Property>
+    </PropertyDef>
+    <PropertyDef name="date6">
+      <Property name="dataType">Date</Property>
+      <Property name="label">日期6 </Property>
+    </PropertyDef>
+    <PropertyDef name="measuresSituation1">
+      <Property></Property>
+      <Property name="label">措施落实情况1</Property>
+    </PropertyDef>
+    <PropertyDef name="implControlMain1">
+      <Property></Property>
+      <Property name="label">实施控制主体1</Property>
+    </PropertyDef>
+    <PropertyDef name="implPeople1">
+      <Property></Property>
+      <Property name="label">措施实施人1</Property>
+    </PropertyDef>
+    <PropertyDef name="review1">
+      <Property></Property>
+      <Property name="label">复核人1</Property>
+    </PropertyDef>
+    <PropertyDef name="measuresSituation2">
+      <Property></Property>
+      <Property name="label">措施落实情况2</Property>
+    </PropertyDef>
+    <PropertyDef name="implControlMain2">
+      <Property></Property>
+      <Property name="label">实施控制主体2</Property>
+    </PropertyDef>
+    <PropertyDef name="implPeople2">
+      <Property></Property>
+      <Property name="label">措施实施人2</Property>
+    </PropertyDef>
+    <PropertyDef name="review2">
+      <Property></Property>
+      <Property name="label">复核人2</Property>
+    </PropertyDef>
+    <PropertyDef name="measuresSituation3">
+      <Property></Property>
+      <Property name="label">措施落实情况3</Property>
+    </PropertyDef>
+    <PropertyDef name="implControlMain3">
+      <Property></Property>
+      <Property name="label">实施控制主体3</Property>
+    </PropertyDef>
+    <PropertyDef name="implPeople3">
+      <Property></Property>
+      <Property name="label">措施实施人3</Property>
+    </PropertyDef>
+    <PropertyDef name="review3">
+      <Property></Property>
+      <Property name="label">复核人3</Property>
+    </PropertyDef>
+    <PropertyDef name="measuresSituation4">
+      <Property></Property>
+      <Property name="label">措施落实情况4</Property>
+    </PropertyDef>
+    <PropertyDef name="implControlMain4">
+      <Property></Property>
+      <Property name="label">实施控制主体4</Property>
+    </PropertyDef>
+    <PropertyDef name="implPeople4">
+      <Property></Property>
+      <Property name="label">措施实施人4</Property>
+    </PropertyDef>
+    <PropertyDef name="review4">
+      <Property></Property>
+      <Property name="label">复核人4</Property>
+    </PropertyDef>
+    <PropertyDef name="checkKey">
+      <Property></Property>
+      <Property name="label">重点抽查的防控环节</Property>
+    </PropertyDef>
+    <PropertyDef name="noImpl">
+      <Property></Property>
+      <Property name="label">未落实的措施</Property>
+    </PropertyDef>
+    <PropertyDef name="checkDepartment">
+      <Property></Property>
+      <Property name="label">抽查部门</Property>
+    </PropertyDef>
+    <PropertyDef name="checkPeople">
+      <Property></Property>
+      <Property name="label">抽查人</Property>
+    </PropertyDef>
+    <PropertyDef name="checkDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">抽查日期</Property>
+    </PropertyDef>
+    <PropertyDef name="remark">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="reviewType">
+    <Property name="matchType">cn.com.oking.entity.Review</Property>
+    <PropertyDef name="reviewId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="projectId">
+      <Property></Property>
+      <Property name="label">项目ID 外键</Property>
+    </PropertyDef>
+    <PropertyDef name="venue">
+      <Property></Property>
+      <Property name="label">会谈地点</Property>
+    </PropertyDef>
+    <PropertyDef name="agent">
+      <Property></Property>
+      <Property name="label">经办人</Property>
+    </PropertyDef>
+    <PropertyDef name="invoice">
+      <Property></Property>
+      <Property name="label">发票是否收到</Property>
+    </PropertyDef>
+    <PropertyDef name="report">
+      <Property></Property>
+      <Property name="label">报告是否收到</Property>
+    </PropertyDef>
+    <PropertyDef name="service">
+      <Property></Property>
+      <Property name="label">服务是否满意</Property>
+    </PropertyDef>
+    <PropertyDef name="eatWithCard">
+      <Property></Property>
+      <Property name="label">吃拿卡要现象</Property>
+    </PropertyDef>
+    <PropertyDef name="informationPayment">
+      <Property></Property>
+      <Property name="label">付款情况说明</Property>
+    </PropertyDef>
+    <PropertyDef name="signForPeople">
+      <Property></Property>
+      <Property name="label">签收人</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">签收日期</Property>
+    </PropertyDef>
+    <PropertyDef name="contact">
+      <Property></Property>
+      <Property name="label">联系方式</Property>
+    </PropertyDef>
+    <PropertyDef name="visitDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">回访时间</Property>
+    </PropertyDef>
+    <PropertyDef name="returnPeople">
+      <Property></Property>
+      <Property name="label">回访纪检人员</Property>
+    </PropertyDef>
+    <PropertyDef name="returnRecord">
+      <Property></Property>
+      <Property name="label">回访记录</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="dtDsConditions">
+    <Property name="matchType">cn.com.oking.entity.DataStatistics</Property>
+    <PropertyDef name="startDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">起始日期</Property>
+    </PropertyDef>
+    <PropertyDef name="region">
+      <Property></Property>
+      <Property name="label">地区</Property>
+    </PropertyDef>
+    <PropertyDef name="endDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">终止日期</Property>
+    </PropertyDef>
+    <PropertyDef name="costArriveWay">
+      <Property></Property>
+      <Property name="label">按费用到账方式</Property>
+    </PropertyDef>
+    <PropertyDef name="reportWitePerson">
+      <Property></Property>
+      <Property name="label">按报告编制人员</Property>
+    </PropertyDef>
+    <PropertyDef name="reportCheckPersonnel">
+      <Property></Property>
+      <Property name="label">按报告校核人员</Property>
+    </PropertyDef>
+    <PropertyDef name="signingPerson">
+      <Property></Property>
+      <Property name="label">按协议签订人员</Property>
+    </PropertyDef>
+    <PropertyDef name="projectHasDiscount">
+      <Property></Property>
+      <Property name="label">按项目减免与否</Property>
+    </PropertyDef>
+    <PropertyDef name="gerHave">
+      <Property></Property>
+      <Property name="label">按地勘报告有无</Property>
+    </PropertyDef>
+    <PropertyDef name="projectIndustry">
+      <Property></Property>
+      <Property name="label">按所属行业 </Property>
+    </PropertyDef>
+    <PropertyDef name="projectIndustryRemark">
+      <Property></Property>
+      <Property name="label">按行业备注</Property>
+    </PropertyDef>
+    <PropertyDef name="dsId">
+      <Property></Property>
+    </PropertyDef>
+  </DataType>
+</Model>

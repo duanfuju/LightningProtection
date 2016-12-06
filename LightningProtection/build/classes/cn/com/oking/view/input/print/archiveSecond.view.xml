@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <AutoForm>
+      <Property name="dataSet">dsRemr</Property>
+      <Property name="cols">*,*,*</Property>
+      <Property name="labelWidth">150</Property>
+      <FieldSet layoutConstraint="vAlign:center;align:center">
+        <Property name="caption">雷评技术会谈记录</Property>
+        <Property name="width">1024</Property>
+        <Buttons/>
+        <Children>
+          <AutoForm>
+            <Property name="dataSet">dsRemr</Property>
+            <Property name="labelWidth">100</Property>
+            <Property name="cols">*,*,*,*</Property>
+            <AutoFormElement>
+              <Property name="name">projectInvestment</Property>
+              <Property name="property">projectInvestment</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">constructionArea</Property>
+              <Property name="property">constructionArea</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectContacts</Property>
+              <Property name="property">projectContacts</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">contact</Property>
+              <Property name="property">contact</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">meetingTime</Property>
+              <Property name="property">meetingTime</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">venue</Property>
+              <Property name="property">venue</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">projectSector</Property>
+              <Property name="property">projectSector</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">rpacNumber</Property>
+              <Property name="property">rpacNumber</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">mainContent</Property>
+              <Property name="property">mainContent</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">participants</Property>
+              <Property name="property">participants</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">preliminaryOpinions</Property>
+              <Property name="property">preliminaryOpinions</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">agent</Property>
+              <Property name="property">agent</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">poDate</Property>
+              <Property name="property">poDate</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">auditOpinion</Property>
+              <Property name="property">auditOpinion</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">director</Property>
+              <Property name="property">director</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">auditDate</Property>
+              <Property name="property">auditDate</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">supervisionAdvice</Property>
+              <Property name="property">supervisionAdvice</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">integritySupervisor</Property>
+              <Property name="property">integritySupervisor</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">saDate</Property>
+              <Property name="property">saDate</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+        </Children>
+      </FieldSet>
+    </AutoForm>
+    <UpdateAction id="updateAction1">
+      <Property name="dataResolver">archiveSecondService#save2</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsRemr</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <DataSet id="dsRemr">
+      <Property name="dataType">remrType</Property>
+      <Property name="dataProvider">archiveSecondService#findByProjectId2</Property>
+    </DataSet>
+  </View>
+</ViewConfig>

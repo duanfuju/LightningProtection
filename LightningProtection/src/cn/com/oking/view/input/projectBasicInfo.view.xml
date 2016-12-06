@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <DataSet id="projectBasicInfoSet">
+      <Property name="dataType">projectBasicInfoType</Property>
+      <Property name="dataProvider">projectBasicInfoService#findByProjectId&#xD;
+</Property>
+    </DataSet>
+    <DataSet id="dataSet1">
+      <Property name="dataType">SysFileInformation</Property>
+      <Property name="dataProvider">projectBasicInfoService#findPgzlzkByProjectId</Property>
+    </DataSet>
+    <DataSet id="dsMaterialImage"/>
+    <UpdateAction id="updateAction1">
+      <Property name="dataResolver">projectBasicInfoService#save</Property>
+      <Property name="confirmMessage">正在保存...</Property>
+      <Property name="successMessage">保存成功！！！</Property>
+      <UpdateItem>
+        <Property name="dataSet">projectBasicInfoSet</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <TabControl id="tcShow">
+      <ControlTab>
+        <Property name="caption">项目概述</Property>
+        <Container>
+          <DataSet id="dsProjectBasicInfo">
+            <Property name="dataType">[projectBasicInfoType]</Property>
+            <Property name="dataProvider">projectBasicInfoService#findAll</Property>
+          </DataSet>
+          <ToolBar>
+            <Separator/>
+            <ToolBarButton id="tbbInsert">
+              <Property name="caption">新增</Property>
+            </ToolBarButton>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <DataGrid id="dgshow">
+            <Property name="dataSet">dsProjectBasicInfo</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="showFilterBar">true</Property>
+            <DataColumn name="projectName">
+              <Property name="property">projectName</Property>
+            </DataColumn>
+            <DataColumn name="buildCompany">
+              <Property name="property">buildCompany</Property>
+            </DataColumn>
+            <DataColumn name="projectLocation">
+              <Property name="property">projectLocation</Property>
+            </DataColumn>
+            <DataColumn name="projectArea">
+              <Property name="property">projectArea</Property>
+            </DataColumn>
+            <DataColumn name="projectId">
+              <Property name="property">projectId</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab id="ctinfo">
+        <Property name="caption">详细信息</Property>
+        <Container>
+          <ToolBar>
+            <Separator/>
+            <Button id="btnSave" layoutConstraint="vAlign:center;align:center">
+              <Property name="caption">保存</Property>
+              <Property name="action">updateAction1</Property>
+            </Button>
+            <Separator/>
+            <Fill/>
+          </ToolBar>
+          <AutoForm id="fromprojectBasicInfo">
+            <Property name="dataSet">projectBasicInfoSet</Property>
+            <AutoFormElement>
+              <Property name="name">projectName</Property>
+              <Property name="property">projectName</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">buildCompany</Property>
+              <Property name="property">buildCompany</Property>
+              <Editor/>
+            </AutoFormElement>
+            <FieldSet layoutConstraint="vAlign:top;align:left">
+              <Property name="caption">项目基本信息</Property>
+              <Property name="width">500</Property>
+              <Buttons/>
+              <Children>
+                <AutoForm>
+                  <Property name="dataSet">projectBasicInfoSet</Property>
+                  <Property name="labelWidth">120</Property>
+                  <Property name="editorWidth">100</Property>
+                  <AutoFormElement>
+                    <Property name="name">contactPerson</Property>
+                    <Property name="property">contactPerson</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contactWay</Property>
+                    <Property name="property">contactWay</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectArea</Property>
+                    <Property name="property">projectArea</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">areaItems</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">evaluateCompany</Property>
+                    <Property name="property">evaluateCompany</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">evaluateCompanyItems</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectIndustry</Property>
+                    <Property name="property">projectIndustry</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">industryItems</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">fileDate</Property>
+                    <Property name="property">fileDate</Property>
+                    <Editor>
+                      <TextEditor id="txtfileDate">
+                        <Property name="dataType">Date</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectLocation</Property>
+                    <Property name="property">projectLocation</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectLat</Property>
+                    <Property name="property">projectLat</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectLongitude</Property>
+                    <Property name="property">projectLongitude</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">projectIndustryRemark</Property>
+                    <Property name="property">projectIndustryRemark</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">industryRemarksItems</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+                <ListDropDown id="areaItems">
+                  <Property name="items">溧水区,高淳区,江宁区,市区,浦口区,六合区</Property>
+                </ListDropDown>
+                <ListDropDown id="industryItems">
+                  <Property name="items">商住,学校,化工,其它</Property>
+                </ListDropDown>
+                <ListDropDown id="industryRemarksItems">
+                  <Property name="items">加油站,智能大厦,古建筑</Property>
+                </ListDropDown>
+                <ListDropDown id="evaluateCompanyItems">
+                  <Property name="items">南京市气象服务中心,江苏科信气象技术开发公司,江苏省防雷中心,南京风云防雷工程有限公司</Property>
+                </ListDropDown>
+              </Children>
+            </FieldSet>
+            <FieldSet layoutConstraint="vAlign:top">
+              <Property name="caption">评估资料状况</Property>
+              <Property name="width">500</Property>
+              <Property name="visible">true</Property>
+              <Property name="hideMode">display</Property>
+              <Buttons>
+                <Button id="btnShowDialog">
+                  <Property name="caption">电子附件上传</Property>
+                  <Property name="action">updateAction2</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <Dialog id="fileDialog">
+                  <Property name="caption">文件上传</Property>
+                  <Property name="width">480</Property>
+                  <Property name="height">300</Property>
+                  <Buttons/>
+                  <Children>
+                    <IFrame id="fileIFrame">
+                      <Property name="path">cn.com.oking.upload.upload.d</Property>
+                    </IFrame>
+                  </Children>
+                  <Tools/>
+                </Dialog>
+                <AutoForm>
+                  <Property name="dataSet">dataSet1</Property>
+                  <AutoFormElement>
+                    <Property name="name">projectApproval</Property>
+                    <Property name="property">projectApproval</Property>
+                    <Editor>
+                      <CheckBox>
+                        <Property name="ignored">false</Property>
+                      </CheckBox>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">paHave</Property>
+                    <Property name="property">paHave</Property>
+                    <Property name="showLabel">false</Property>
+                    <Editor>
+                      <RadioGroup>
+                        <RadioButton>
+                          <Property name="text">有</Property>
+                          <Property name="value">true</Property>
+                        </RadioButton>
+                        <RadioButton>
+                          <Property name="text">否</Property>
+                          <Property name="value">false</Property>
+                        </RadioButton>
+                      </RadioGroup>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">geologicalExplorationReport</Property>
+                    <Property name="property">geologicalExplorationReport</Property>
+                    <Editor>
+                      <CheckBox>
+                        <Property name="ignored">false</Property>
+                      </CheckBox>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">gerHave</Property>
+                    <Property name="property">gerHave</Property>
+                    <Property name="showLabel">false</Property>
+                    <Editor>
+                      <RadioGroup>
+                        <RadioButton>
+                          <Property name="text">有</Property>
+                          <Property name="value">true</Property>
+                        </RadioButton>
+                        <RadioButton>
+                          <Property name="text">否</Property>
+                          <Property name="value">false</Property>
+                        </RadioButton>
+                      </RadioGroup>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">feasibilityReport</Property>
+                    <Property name="property">feasibilityReport</Property>
+                    <Editor>
+                      <CheckBox>
+                        <Property name="ignored">false</Property>
+                      </CheckBox>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">frHave</Property>
+                    <Property name="property">frHave</Property>
+                    <Property name="showLabel">false</Property>
+                    <Editor>
+                      <RadioGroup>
+                        <RadioButton>
+                          <Property name="text">有</Property>
+                          <Property name="value">true</Property>
+                        </RadioButton>
+                        <RadioButton>
+                          <Property name="text">否</Property>
+                          <Property name="value">false</Property>
+                        </RadioButton>
+                      </RadioGroup>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">otherInformation</Property>
+                    <Property name="property">otherInformation</Property>
+                    <Editor>
+                      <CheckBox>
+                        <Property name="ignored">false</Property>
+                      </CheckBox>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">oiHave</Property>
+                    <Property name="property">oiHave</Property>
+                    <Property name="showLabel">false</Property>
+                    <Editor>
+                      <RadioGroup>
+                        <RadioButton>
+                          <Property name="text">有</Property>
+                          <Property name="value">true</Property>
+                        </RadioButton>
+                        <RadioButton>
+                          <Property name="text">否</Property>
+                          <Property name="value">否</Property>
+                        </RadioButton>
+                      </RadioGroup>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">drawings</Property>
+                    <Property name="property">drawings</Property>
+                    <Editor>
+                      <CheckBox>
+                        <Property name="ignored">false</Property>
+                      </CheckBox>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">dHave</Property>
+                    <Property name="property">dHave</Property>
+                    <Property name="showLabel">false</Property>
+                    <Editor>
+                      <RadioGroup>
+                        <RadioButton>
+                          <Property name="text">有</Property>
+                          <Property name="value">true</Property>
+                        </RadioButton>
+                        <RadioButton>
+                          <Property name="text">否</Property>
+                          <Property name="value">false</Property>
+                        </RadioButton>
+                      </RadioGroup>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+                <UpdateAction id="updateAction2">
+                  <Property name="dataResolver">projectBasicInfoService#dataset1</Property>
+                  <UpdateItem>
+                    <Property name="dataSet">dataSet1</Property>
+                  </UpdateItem>
+                </UpdateAction>
+              </Children>
+            </FieldSet>
+            <AutoFormElement>
+              <Property name="name">record</Property>
+              <Property name="property">record</Property>
+              <Editor>
+                <TextArea/>
+              </Editor>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">remarks</Property>
+              <Property name="property">remarks</Property>
+              <Editor>
+                <TextArea/>
+              </Editor>
+            </AutoFormElement>
+            <FieldSet layoutConstraint="align:left;vAlign:top;colSpan:2">
+              <Property name="caption">项目分发及其他状况</Property>
+              <Property name="width">800</Property>
+              <Buttons/>
+              <Children>
+                <AutoForm>
+                  <Property name="dataSet">projectBasicInfoSet</Property>
+                  <Property name="cols">*,*,*</Property>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="editorWidth">100</Property>
+                  <Property name="readOnly">true</Property>
+                  <AutoFormElement>
+                    <Property name="name">reportWriteDate</Property>
+                    <Property name="property">reportWriteDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportPreFinishDate</Property>
+                    <Property name="property">reportPreFinishDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportFinishDate</Property>
+                    <Property name="property">reportFinishDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportWitePerson</Property>
+                    <Property name="property">reportWitePerson</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">bgbzry</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportCheckPerson</Property>
+                    <Property name="property">reportCheckPerson</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">bgshry</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportCheckDate</Property>
+                    <Property name="property">reportCheckDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contractSigningPerson</Property>
+                    <Property name="property">contractSigningPerson</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">htqdry</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contractSigningDate</Property>
+                    <Property name="property">contractSigningDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contractDeliveryDate</Property>
+                    <Property name="property">contractDeliveryDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contractPrice</Property>
+                    <Property name="property">contractPrice</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportPrintDate</Property>
+                    <Property name="property">reportPrintDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">signPerson</Property>
+                    <Property name="property">signPerson</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">qsry</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportFeedingDate</Property>
+                    <Property name="property">reportFeedingDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">costArriveWay</Property>
+                    <Property name="property">costArriveWay</Property>
+                    <Editor>
+                      <TextEditor>
+                        <Property name="trigger">fydzxs</Property>
+                      </TextEditor>
+                    </Editor>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">costArriveDate</Property>
+                    <Property name="property">costArriveDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">invoiceDate</Property>
+                    <Property name="property">invoiceDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">invoiceFeedingDate</Property>
+                    <Property name="property">invoiceFeedingDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">returnVisitDate</Property>
+                    <Property name="property">returnVisitDate</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportId</Property>
+                    <Property name="property">reportId</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">archiveId</Property>
+                    <Property name="property">archiveId</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                </AutoForm>
+                <ListDropDown id="bgbzry">
+                  <Property name="items">张,李</Property>
+                </ListDropDown>
+                <ListDropDown id="bgshry">
+                  <Property name="items">张,李</Property>
+                </ListDropDown>
+                <ListDropDown id="htqdry">
+                  <Property name="items">张,李</Property>
+                </ListDropDown>
+                <ListDropDown id="qsry">
+                  <Property name="items">张,李</Property>
+                </ListDropDown>
+                <ListDropDown id="fydzxs">
+                  <Property name="items">形式1,形式2</Property>
+                </ListDropDown>
+                <ListDropDown id="fpkjry">
+                  <Property name="items">张,李</Property>
+                </ListDropDown>
+              </Children>
+            </FieldSet>
+            <FieldSet layoutConstraint="align:left;vAlign:top">
+              <Property name="width">800</Property>
+              <Property name="collapsed">false</Property>
+              <Buttons/>
+              <Children>
+                <AutoForm>
+                  <Property name="dataSet">projectBasicInfoSet</Property>
+                  <Property name="cols">*,*</Property>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="editorWidth">100</Property>
+                  <AutoFormElement>
+                    <Property name="name">projectOverview</Property>
+                    <Property name="property">projectOverview</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">contractSigning</Property>
+                    <Property name="property">contractSigning</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">reportStatus</Property>
+                    <Property name="property">reportStatus</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">checkPersonnel</Property>
+                    <Property name="property">checkPersonnel</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement>
+                    <Property name="name">completion</Property>
+                    <Property name="property">completion</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                </AutoForm>
+              </Children>
+            </FieldSet>
+          </AutoForm>
+        </Container>
+      </ControlTab>
+    </TabControl>
+  </View>
+</ViewConfig>

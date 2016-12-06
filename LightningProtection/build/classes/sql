@@ -1,0 +1,778 @@
+create tablespace upload datafile 'd:\upload.dbf' size 10m autoextend on next 30m maxsize unlimited;
+
+create user admin identified by 123456 default tablespace upload;
+
+grant connect,resource to admin;
+
+grant dba to admin;
+ 
+ --Create table
+create table SYS_FILE_INFORMATION
+(
+  ID             VARCHAR2(30) primary key,
+  SHOW_PATH      VARCHAR2(200),
+  FILE_NAME      VARCHAR2(500),
+  ASSOCIATION_ID VARCHAR2(200),
+  SORT           VARCHAR2(30),
+  SAVA_PATH      VARCHAR2(200),
+  REAL_NAME      VARCHAR2(50),
+  UP_PEOPLE      VARCHAR2(200),
+  UP_TIME        DATE,
+  DEL_PEOPLE     VARCHAR2(200),
+  DEL_STATE      VARCHAR2(200),
+  DEL_TIME       DATE,
+  DEL_WJSTATE    VARCHAR2(200),
+  DEL_WJTIME     DATE,
+ up_type varchar(100)
+);
+--alter table sys_file_information add up_type varchar(100);
+ tablespace upload
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 192K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table SYS_FILE_INFORMATION
+  is '系统文件上传信息';
+-- Add comments to the columns 
+comment on column SYS_FILE_INFORMATION.ID
+  is '主键';
+comment on column SYS_FILE_INFORMATION.SHOW_PATH
+  is '显示路径';
+comment on column SYS_FILE_INFORMATION.FILE_NAME
+  is '文件名称(上传前名称)';
+comment on column SYS_FILE_INFORMATION.ASSOCIATION_ID
+  is '文件关联编号';
+comment on column SYS_FILE_INFORMATION.SORT
+  is '顺序';
+comment on column SYS_FILE_INFORMATION.SAVA_PATH
+  is '保存路径';
+comment on column SYS_FILE_INFORMATION.REAL_NAME
+  is '实际名称';
+comment on column SYS_FILE_INFORMATION.UP_PEOPLE
+  is '上传人';
+comment on column SYS_FILE_INFORMATION.UP_TIME
+  is '上传时间';
+comment on column SYS_FILE_INFORMATION.DEL_PEOPLE
+  is '删除人';
+comment on column SYS_FILE_INFORMATION.DEL_STATE
+  is '删除状态';
+comment on column SYS_FILE_INFORMATION.DEL_TIME
+  is '删除时间';
+comment on column SYS_FILE_INFORMATION.DEL_WJSTATE
+  is '文件删除状态';
+comment on column SYS_FILE_INFORMATION.DEL_WJTIME
+  is '文件删除时间';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table SYS_FILE_INFORMATION
+  add constraint PK_SYS_FILE_INFORMATION_ID primary key (ID)
+  
+  using index 
+  tablespace upload
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+
+
+create table INFO_CONNECTION_BASIC
+(
+      icbid varchar2(100) primary key,
+      projectid varchar2(100) NOT NULL,
+      filedid VARCHAR2(30),
+      doctype varchar2(50),--文档类型
+      instructions varchar2(50) --指令
+);
+
+
+insert into INFO_CONNECTION_BASIC values(111111111,14292596198592821467,1,'jpg','asdasd');
+insert into INFO_CONNECTION_BASIC values(1111,14292596198592821467,1,'jpg','vfdgds');
+insert into INFO_CONNECTION_BASIC values(111111,14292596198592821467,2,'jpg','561191');
+insert into INFO_CONNECTION_BASIC values(1111111,14292596198592821467,2,'jpg','561191');
+insert into INFO_CONNECTION_BASIC values(11111,14292596198592821467,2,'jpg','561191');
+
+select * from INFO_CONNECTION_BASIC
+
+commit;
+/*insert into sys_file_information
+  (id, show_path, file_name, association_id, sort, sava_path, real_name, up_people, up_time, del_people, del_state, del_time, del_wjstate, del_wjtime)
+values
+  (seq_sfiid.nextval,'D:\')*/
+
+	drop table project_basic_info;
+	drop table discuss_situation;
+	drop table technical_params;
+  drop table print_cost;
+
+
+	-- project_basic_info 项目基本信息表
+	create table project_basic_info
+	(
+		-- 项目ID 主键
+		project_id varchar2(100) primary key ,
+		-- 项目名称
+    project_name varchar2(100) ,
+    -- 建设单位
+    build_company varchar2(100) ,
+    -- 建档日期
+    file_date date ,
+    -- 资料齐全日期
+    data_complete_date date ,
+    -- 联系人
+    contact_person varchar2(100) ,
+    -- 联系方式
+    contact_way number(22,0) ,
+    -- 项目所在地
+    project_location varchar2(100) ,
+    -- 项目所属区域
+    project_area varchar2(100) ,
+    -- 项目所在地纬度
+    project_lat number(22,0) ,
+    -- 项目所在地经度
+    project_longitude number(22,0) ,
+    -- 评估单位
+    evaluate_company varchar2(100) ,
+    -- 项目所属行业
+    project_industry varchar2(100) ,
+    -- 项目所属行业备注
+    project_industry_remark varchar2(100) ,
+    -- 报告编制日期
+    report_write_date date ,
+    -- 报告预完成日期
+    report_pre_finish_date date ,
+    -- 报告完成日期
+    report_finish_date date ,
+    -- 报告编制人员
+    report_wite_person varchar2(100) ,
+    -- 报告审核人员
+    report_check_person varchar2(100) ,
+    -- 报告审核日期
+    report_check_date date ,
+    -- 合同签订人员
+    contract_signing_person varchar2(100) ,
+    -- 合同签订日期
+    contract_signing_date date ,
+    -- 合同接收日期
+    contract_receive_date date ,
+    -- 合同交送日期
+    contract_delivery_date date ,
+    -- 合同金额
+    contract_price number(22,0) ,
+    -- 报告打印日期
+    report_print_date date ,
+    -- 签收人员
+    sign_person varchar2(100) ,
+    -- 报告送取日期
+    report_feeding_date date ,
+    -- 费用到账形式
+    cost_arrive_way varchar2(100) ,
+    -- 费用到账日期
+    cost_arrive_date date ,
+    -- 费用到账金额
+    cost_arrive_price number(22,0) ,
+    -- 发票开具金额
+    invoice_price number(22,0) ,
+    -- 发票开具日期
+    invoice_date date ,
+    -- 发票送取日期
+    invoice_feeding_date date ,
+    -- 发票开具人员
+    invoice_person varchar2(100) ,
+    -- 回访日期
+    return_visit_date date ,
+    -- 报告编号
+    report_id number(22,0) ,
+    -- 档案编号
+    archive_id number(22,0) ,
+    -- 记录
+		record varchar2(100) ,
+		-- 讲话
+		remarks varchar2(100) 
+  );
+  
+  -- discuss_situation 市场洽谈情况表
+  create table discuss_situation
+  (
+    -- 情况ID 主键
+    situation_id varchar2(100) primary key ,
+    -- 项目ID 
+		project_id varchar2(100) not null,
+    -- 合同签订日期
+    contract_signing_date date ,
+    -- 合同签订状况
+    contract_signing_condition varchar2(100) ,
+    -- 合同洽谈日期
+    contract_discuss_date date ,
+    -- 天气情况
+    weather_condition varchar2(100) ,
+    -- 签订人员
+    signing_person varchar2(100) ,
+    -- 合同洽谈人员
+    market_discuss_person varchar2(100) ,
+    -- 检测日期
+    check_date date ,
+    -- 图纸资料状况
+    drawing_condition varchar2(100) ,
+    -- 项目所在地经度
+    project_lat number(22,0) ,
+    -- 项目所在地纬度
+    project_longitude number(22,2) ,
+    -- 报告状况
+    report_condition varchar2(100) ,
+    -- 会谈记录
+    msession_record varchar2(1000) ,
+    -- 会谈备注
+    msession_remarks varchar2(500) ,
+    -- 项目总投资
+    project_total_investment number(22,2) ,
+    -- 项目建筑面积
+    project_construction_area number(22,2) ,
+    -- 项目是否减免
+    project_has_discount varchar2(4) ,
+    -- 项目减免折扣
+    project_discount number(22,2) ,
+    -- 项目减免原由	
+    project_discount_reason varchar2(100) ,
+    -- 待评项目面积
+    project_construction_area_eval number(22,2) ,
+
+    -- 项目全刊/补刊
+    project_issue varchar2(100) ,
+    -- 扣除费用类型
+    deducte_price_type varchar2(100) ,
+    -- 项目收费报价
+    project_fees_quotation number(22,0) 
+  );
+
+  -- technical_params 技术参数表
+  create table technical_params
+  (
+    -- 技术参数ID主键
+    technical_params_id varchar2(100) primary key ,
+    -- 项目ID 主键
+		project_id varchar2(100) not null,
+    -- 防雷类别
+    light_protect_category varchar2(100) ,
+    -- 地闪密度
+    ground_flash_density varchar2(100) ,
+    -- 建筑高度
+    building_height varchar2(100) ,
+    -- 最大雷电流
+    max_light_current varchar2(100) ,
+    -- 平均雷电流
+    avg_light_current varchar2(100) ,
+    -- 电子防护等级
+    eve_protect_level varchar2(100) ,
+    -- 防火措施因子
+    fire_protect_factor varchar2(100) ,
+    -- 评估分区
+    evaluate_partition varchar2(100) ,
+    -- 雷电风险值
+    light_risk_value varchar2(100) ,
+    -- 有无整改意见
+    has_rectification varchar2(100) ,
+    -- 备注
+    tremarks varchar2(1000),
+    -- 电阻率
+    resistivity varchar2(100) 
+  );
+
+  -- print_cost 打印费用表
+  create table print_cost
+  (      
+      -- 打印ID
+      print_id varchar2(50) primary key ,   
+      -- 项目ID
+      project_id varchar2(100),
+      -- 项目明细
+      project_details varchar2(64) ,
+      -- 打印日期
+      cost_print_date date ,
+      -- 打印张数	
+      print_count number(16) ,
+      -- 打印费用	
+      print_price number(24,2) ,
+      -- 复印张数	
+      copy_count number(16) ,
+      -- 复印费用	
+      copy_price number(24,2) ,
+      -- 彩打份数	
+      color_print_count number(16) ,
+      -- 彩打费用	
+      color_print_price number(24,2) ,
+      -- 装订数量	
+      bind_count number(16) ,
+      -- 装订费用	
+      bind_price number(24,2) ,
+      -- 合计费用	
+      total_price number(24,2) ,
+      -- 备注		
+      remark varchar2(1000) 
+  );
+  
+  
+--电阻率打印表
+create table dzl
+(
+       dzl_id varchar2(50) primary key,
+        -- 项目ID
+       project_id varchar2(100),
+       check_date date,
+       correction_factor varchar2(8),
+       weather varchar2(8),
+       check_person varchar2(32),
+       wd1 varchar2(8),
+       wd2 varchar2(8),
+       wd3 varchar2(8),
+       wd4 varchar2(8),
+       jd1 varchar2(8),
+       jd2 varchar2(8),
+       jd3 varchar2(8),
+       jd4 varchar2(8),
+       v11 varchar2(8), 
+       v12 varchar2(8),
+       v13 varchar2(8),
+       v14 varchar2(8),
+       v21 varchar2(8),
+       v22 varchar2(8),
+       v23 varchar2(8),
+       v24 varchar2(8),
+       v31 varchar2(8),
+       v32 varchar2(8),
+       v33 varchar2(8),
+       v34 varchar2(8),
+       v41 varchar2(8),
+       v42 varchar2(8),
+       v43 varchar2(8),
+       v44 varchar2(8),
+       v51 varchar2(8),
+       v52 varchar2(8),
+       v53 varchar2(8),
+       v54 varchar2(8),
+       v61 varchar2(8),
+       v62 varchar2(8),
+       v63 varchar2(8),
+       v64 varchar2(8),
+       v71 varchar2(8),
+       v72 varchar2(8),
+       v73 varchar2(8),
+       v74 varchar2(8),
+       v81 varchar2(8),
+       v82 varchar2(8),
+       v83 varchar2(8),
+       v84 varchar2(8),
+       v91 varchar2(8),
+       v92 varchar2(8),
+       v93 varchar2(8),
+       v94 varchar2(8),
+       v101 varchar2(8),
+       v102 varchar2(8),
+       v103 varchar2(8),
+       v104 varchar2(8),
+       remark varchar2(100)     
+);
+
+--为了查询的时候方便
+create table SELECT_WITH
+(
+  project_name  VARCHAR2(100) not null,
+  build_company VARCHAR2(100)
+);
+
+
+--资料归档一表
+create table archive_first
+(      
+       --资料归档编号
+       af_id varchar2(50) primary key,
+       -- 项目ID 外键
+		   project_id varchar2(100) not null,
+       --建档日期
+       document_date date,
+       --防控编号
+       control_number varchar2(50),
+       --项目名称
+       project_name varchar2(50),
+       --分类编号
+       classification_number varchar2(50),
+       --建设单位
+       construction_unit varchar2(50),
+       --合同洽谈人员
+       cn_personnel varchar2(50),
+       --报告编制人员
+       report_staff varchar2(50),
+       --报告校核人员
+       report_check_personnel varchar2(50)
+);
+
+
+--雷评技术会谈记录
+create table ray_evaluation_meeting_record
+(
+       --主键id
+       remr_id varchar2(100) primary key,
+       -- 项目ID 外键
+		   project_id varchar2(100) not null,
+       --项目投资
+       project_investment varchar2(100),
+       --建筑面积
+       construction_area varchar2(100),
+       --项目联系人
+       project_contacts varchar2(100),
+       --联系方式
+       contact varchar2(100),
+       --会谈时间
+       meeting_time date,
+       --会谈地点
+       venue varchar2(100),
+       --项目所属行业
+       project_sector varchar2(100),
+       --风险防控编号
+       rpac_number varchar2(100),
+       --主要内容
+        main_content varchar2(100),
+       --委托方参加人员
+       participants varchar2(100),
+       --初步意见
+       Preliminary_opinions varchar2(100),
+       --经办人
+       agent varchar2(100),
+       --初步意见的日期
+       po_date date,
+       --审核意见
+       audit_opinion varchar2(100),
+       --主任
+       director varchar2(100),
+       --审核意见的日期
+       audit_date date,
+       --监督意见
+       supervision_advice varchar2(100),
+       --廉政监督员
+       Integrity_supervisor varchar2(100),
+       --监督意见日期
+       sa_date  date   
+);
+--（普通）合同管理风险防控措施执行单
+create table perform_single
+(
+       --主键
+       ps_id  varchar2(100) primary key,
+       -- 项目ID 外键
+		   project_id varchar2(100) not null,
+       --风险防控编号
+       rpac_number varchar2(100),
+       --主办单位
+       organizer varchar2(100),
+       --监督人
+       supervisor varchar2(100),
+       --承办部门1
+       undertake1 varchar2(100),
+       --签收人1
+       sign_for_people1 varchar2(100),
+       --日期1
+       date1 date,
+       --承办部门2
+       undertake2 varchar2(100),
+       --签收人2
+       sign_for_people2 varchar2(100),
+       --日期2 
+       date2 date,
+       --承办部门3
+       undertake3 varchar2(100),
+       --签收人3
+       sign_for_people3 varchar2(100),
+       --日期3
+       date3 date,
+       --承办部门4
+       undertake4 varchar2(100),
+       --签收人4
+       sign_for_people4 varchar2(100),
+       --日期4 
+       date4 date,
+       --承办部门5
+       undertake5 varchar2(100),
+       --签收人5
+       sign_for_people5 varchar2(100),
+       --日期5
+       date5 date,
+       --承办部门6
+       undertake6 varchar2(100),
+       --签收人6
+       sign_for_people6 varchar2(100),
+       --日期6 
+       date6 date,
+       --措施落实情况1
+       measures_situation1 varchar2(100),
+       --实施控制主体1
+       impl_control_main1 varchar2(100),
+       --措施实施人1
+       impl_people1 varchar2(100),
+       --复核人1
+       review1 varchar2(100),
+       --措施落实情况2
+       measures_situation2 varchar2(100),
+       --实施控制主体2
+       impl_control_main2 varchar2(100),
+       --措施实施人2
+       impl_people2 varchar2(100),
+       --复核人2
+       review2 varchar2(100),
+       --措施落实情况3
+       measures_situation3 varchar2(100),
+       --实施控制主体3
+       impl_control_main3 varchar2(100),
+       --措施实施人3
+       impl_people3 varchar2(100),
+       --复核人3
+       review3 varchar2(100),
+       --措施落实情况4
+       measures_situation4 varchar2(100),
+       --实施控制主体4
+       impl_control_main4 varchar2(100),
+       --措施实施人4
+       impl_people4 varchar2(100),
+       --复核人4
+       review4 varchar2(100),
+       --重点抽查的防控环节
+       check_key varchar2(100),
+       --未落实的措施
+       no_impl varchar2(100),
+       --抽查部门
+       check_department varchar2(100),
+       --抽查人
+       check_people varchar2(100),
+       --抽查日期
+       check_date date,
+       --备注
+       remark varchar2(1000)
+);
+
+--雷电灾害风险评估送达回执（回访表） 
+create table review           
+(
+       --主键
+       review_id  varchar2(100) primary key,
+       -- 项目ID 外键
+		   project_id varchar2(100) not null,
+       --会谈地点
+       venue varchar2(100),
+       --经办人
+       agent varchar2(100),
+       --发票是否收到
+       invoice varchar2(100),
+       --报告是否收到
+       report varchar2(100),
+       --服务是否满意
+       service varchar2(100),
+       --吃拿卡要现象
+       eat_with_card varchar2(100),
+       --付款情况说明
+       Information_payment varchar2(100),
+       --签收人
+       sign_for_people varchar2(100),
+       --签收日期
+       receipt_date date,
+       --联系方式
+       contact varchar2(100),
+       --回访时间
+       visit_date date,
+       --回访纪检人员
+       return_people varchar2(100),
+       --回访记录
+       return_record varchar2(1000)
+);
+
+alter   table   SYS_FILE_INFORMATION   add(
+		--立项批文
+       project_approval varchar2(100),
+       --立项批文有否
+       pa_have varchar2(100),
+       --地勘报告
+       geological_exploration_report varchar2(100),
+       --地勘报告有否
+       ger_have varchar2(100),
+       --图纸资料
+       drawings varchar2(100),
+       --图纸资料有否
+       d_have varchar2(100),
+       --可行性报告
+       feasibility_report varchar2(100),
+       --可行性报告有否
+       fr_have varchar2(100),
+       --其他资料
+       other_information varchar2(100),
+       --其他资料有否
+       oi_have varchar2(100)
+       
+);
+--数据统计表
+create table data_statistics
+(
+       ds_id varchar2(50) primary key,
+       /**起始日期*/
+       start_date date,
+      /**地区*/
+       region varchar2(50),
+      /**终止日期*/
+       end_date date,
+      /**按费用到账方式*/
+       cost_arrive_way varchar2(50),
+      /**按报告编制人员*/
+       report_wite_person varchar2(50),
+      /**按报告校核人员*/
+       report_check_personnel varchar2(50),
+      /**按协议签订人员*/
+       signing_Person varchar2(50),
+      /**按项目减免与否*/
+       project_has_discount varchar2(50),
+      /**按地勘报告有无*/
+       ger_have varchar2(50),
+      /**按所属行业*/
+       project_industry varchar2(50),
+      /**按行业备注*/
+       project_industry_remark varchar2(50)
+);
+
+--项目总结
+create table project_conclusion
+(
+     --  主键 
+     pc_id varchar2(100) primary key ,
+     -- 项目ID
+     project_id varchar2(100),
+     --报告打印与否
+     report_print varchar2(100),
+     --项目收费状态
+     project_state_charge varchar2(100),
+     --图纸齐全与否
+     drawings_has varchar2(100),
+     --报告领取与否
+     report_receive varchar2(100),
+     --项目状态
+     project_status varchar2(100)
+);
+
+
+
+
+
+
+
+
+
+
+/***************************************多表查询(项目具体数据统计)start*****************************************/
+
+select pbi.project_name,pc.report_receive,
+       ds.project_total_investment,print.total_price
+from project_basic_info pbi 
+     inner join sys_file_information sfi on pbi.project_id=sfi.association_id 
+     inner join archive_first af on pbi.project_id=af.project_id
+     inner join discuss_situation ds on pbi.project_id=ds.project_id
+     inner join project_conclusion pc on pbi.project_id=pc.project_id
+     inner join print_cost print on pbi.project_id=print.project_id
+where 
+      pbi.project_area like '%%'  /*项目所属区域*/
+    and pbi.file_date between date'2015-1-1' and date'2015-5-5'/*开始和结束时间*/
+    and pc.report_print like '%%'/*报告打印与否*/
+    and pc.project_state_charge like '%%'/*项目收费状态*/
+    and pc.drawings_has like '%%'/*图纸是否齐全*/
+    and pc.report_receive like '%%'/*报告领取与否*/
+    and pbi.cost_arrive_way like '%%'/*费用到账方式*/
+    and pbi.report_wite_person like '%%'/*报告编制人员*/
+    and af.report_check_personnel like '%%'/*报告校核人员*/
+    and ds.signing_person like '%%'/******协议签订人员*/
+    and ds.project_has_discount like '%%' /*项目减免与否*/
+    and sfi.ger_have like '%%'/*地勘报告*/
+    and pbi.project_industry like '%%'/*所属行业*/
+    and pbi.project_industry_remark like '%%'/*行业备注*/
+    and pc.project_status like '%%'/*项目状态*/
+/***************************************多表查询(项目具体数据统计)end*****************************************/
+
+
+
+
+
+/***************************************多表查询(项目总体概况查询)start*****************************************/
+select pbi.project_id,pbi.project_name,pbi.build_company,pbi.contact_person,pbi.contact_way
+      ,tp.light_protect_category
+      , tp.ground_flash_density
+      , tp.building_height 
+      ,tp.max_light_current
+      , tp.avg_light_current
+      , tp.eve_protect_level
+      , tp.evaluate_partition
+from project_basic_info pbi 
+     inner join sys_file_information sfi on pbi.project_id=sfi.association_id 
+     inner join archive_first af on pbi.project_id=af.project_id
+     inner join discuss_situation ds on pbi.project_id=ds.project_id
+     inner join project_conclusion pc on pbi.project_id=pc.project_id
+     inner join print_cost print on pbi.project_id=print.project_id
+     inner join technical_params tp on pbi.project_id=tp.project_id 
+where 
+      pbi.project_area like '%%'  /*项目所属区域*/
+    and pbi.file_date between date'2015-1-1' and date'2015-5-5'/*开始和结束时间*/
+    and pc.report_print like '%%'/*报告打印与否*/
+    and pc.project_state_charge like '%%'/*项目收费状态*/
+    and pc.drawings_has like '%%'/*图纸是否齐全*/
+    and pc.report_receive like '%%'/*报告领取与否*/
+    and pbi.cost_arrive_way like '%%'/*费用到账方式*/
+    and pbi.report_wite_person like '%%'/*报告编制人员*/
+    and af.report_check_personnel like '%%'/*报告校核人员*/
+    and ds.signing_person like '%%'/******协议签订人员*/
+    and ds.project_has_discount like '%%' /*项目减免与否*/
+    and sfi.ger_have like '%%'/*地勘报告*/
+    and pbi.project_industry like '%%'/*所属行业*/
+    and pbi.project_industry_remark like '%%'/*行业备注*/
+    and pc.project_status like '%%'/*项目状态*/
+    and tp.light_protect_category like '%%'
+    and tp.ground_flash_density like '%%'
+    and tp.building_height like '%%'
+    and tp.max_light_current like '%%'
+    and tp.avg_light_current like '%%'
+    and tp.eve_protect_level like '%%'
+    and tp.evaluate_partition like '%%'
+/***************************************多表查询(项目总体概况查询)end*****************************************/
+
+
+/***************************************修改项目基本信息表start*****************************************/
+alter table project_basic_info 
+      add (
+        --项目概况
+        Project_overview varchar2(100),
+        --合同签订情况
+        contract_signing varchar2(100),
+        --报告状态
+        Report_status varchar2(100),
+        --备注1
+        remark1 varchar2(100),
+        --完成情况
+        completion varchar2(100),
+        --校核人员
+        Check_personnel varchar2(100),
+        --备注2
+        remark2 varchar2(100)
+      );
+/***************************************修改项目基本信息表end*****************************************/
+
+
+
+
+/*****************************/
+select pbi.project_id,pbi.project_name,pbi.build_company,pbi.contact_person,pbi.contact_way,
+     pbi.project_overview,pbi.contract_signing,pbi.report_status,pbi.contract_signing_person,
+     pbi.contract_price,pbi.remark1,pbi.report_wite_person,pbi.check_personnel,pbi.completion,pbi.remark2
+from project_basic_info pbi
+where pbi.file_date between date'2015-1-1' and date'2015-5-5'
+/****************************/

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Button id="btnSubmit">
+      <Property name="renderTo">submit</Property>
+      <Property name="caption">电阻率表格保存</Property>
+    </Button>
+    <HtmlContainer id="hcConn">
+      <TextEditor id="correctionFactor">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#correctionFactor</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="weather">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#weather</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="checkPerson">
+        <Property name="renderOn">#checkPerson</Property>
+        <Property name="dataType">String</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="wd1">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#wd1</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+        <Property name="text"> </Property>
+      </TextEditor>
+      <TextEditor id="wd2">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#wd2</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="wd3">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#wd3</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="wd4">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#wd4</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="jd1">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#jd1</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="jd2">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#jd2</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="jd3">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#jd3</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="jd4">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#jd4</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v11">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v11</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v12">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v12</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v13">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v13</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v14">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v14</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v21">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v21</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v22">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v22</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v23">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v23</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v24">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v24</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v31">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v31</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v32">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v32</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v33">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v33</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v34">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v34</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v41">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v41</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v42">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v42</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v43">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v43</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v44">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v44</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v51">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v51</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v52">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v52</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v53">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v53</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="checkDate">
+        <Property name="renderOn">#checkDate</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+        <Property name="dataType">Date</Property>
+      </TextEditor>
+      <TextEditor id="v54">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v54</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v61">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v61</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v62">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v62</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v63">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v63</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v64">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v64</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v71">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v71</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v72">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v72</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v73">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v73</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v74">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v74</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v81">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v81</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v82">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v82</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v83">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v83</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v84">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v84</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v91">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v91</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v92">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v92</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v93">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v93</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v94">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v94</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v101">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v101</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v102">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v102</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v103">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v103</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="v104">
+        <Property name="dataType">String</Property>
+        <Property name="renderOn">#v104</Property>
+        <Property name="style">
+          <Property name="border">0</Property>
+          <Property name="marging">40%</Property>
+        </Property>
+      </TextEditor>
+      <TextEditor id="projectName">
+        <Property name="renderOn">#projectName</Property>
+        <Property name="readOnly">false</Property>
+      </TextEditor>
+    </HtmlContainer>
+    <AjaxAction id="LoadAction">
+      <Property name="service">dzlService#getDzl</Property>
+      <Property name="successMessage">加载成功！！！</Property>
+    </AjaxAction>
+    <Button id="btnPrint">
+      <Property name="caption">打印</Property>
+      <Property name="renderTo">btnPrint</Property>
+    </Button>
+  </View>
+</ViewConfig>

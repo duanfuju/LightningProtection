@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="CostPrint" parent="PrintCostType">
+      <PropertyDef name="printId">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="projectId"/>
+      <PropertyDef name="projectDetails">
+        <Property></Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="costPrintDate">
+        <Property name="dataType">Date</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="printCount">
+        <Property name="dataType">BigDecimal</Property>
+        <Validator type="range">
+          <Property name="name">range</Property>
+          <Property name="minValue">0</Property>
+          <Property name="maxValue">100000000</Property>
+          <Property name="maxValueValidateMode">allowEquals</Property>
+          <Property name="minValueValidateMode">allowEquals</Property>
+        </Validator>
+      </PropertyDef>
+      <PropertyDef name="printPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="required">false</Property>
+        <Validator type="regExp">
+          <Property name="name">reg</Property>
+          <Property name="whiteRegExp">/^(\\+86)?(1[0-9]{10})$/</Property>
+          <Property name="resultMessage">非零开头的最多带两位小数的数字</Property>
+          <Property name="runAt">client</Property>
+        </Validator>
+      </PropertyDef>
+      <PropertyDef name="copyCount">
+        <Property name="dataType">BigDecimal</Property>
+        <Validator type="range">
+          <Property name="name">range</Property>
+          <Property name="minValue">0</Property>
+          <Property name="maxValue">100000000</Property>
+          <Property name="maxValueValidateMode">allowEquals</Property>
+          <Property name="minValueValidateMode">allowEquals</Property>
+        </Validator>
+      </PropertyDef>
+      <PropertyDef name="copyPrice">
+        <Property name="dataType">BigDecimal</Property>
+      </PropertyDef>
+      <PropertyDef name="colorPrintCount">
+        <Property name="dataType">BigDecimal</Property>
+        <Validator type="range">
+          <Property name="name">range</Property>
+          <Property name="minValue">0</Property>
+          <Property name="maxValue">100000000</Property>
+          <Property name="maxValueValidateMode">allowEquals</Property>
+          <Property name="minValueValidateMode">allowEquals</Property>
+        </Validator>
+      </PropertyDef>
+      <PropertyDef name="colorPrintPrice">
+        <Property name="dataType">BigDecimal</Property>
+      </PropertyDef>
+      <PropertyDef name="bindCount">
+        <Property name="dataType">BigDecimal</Property>
+        <Validator type="range">
+          <Property name="name">range</Property>
+          <Property name="minValue">0</Property>
+          <Property name="maxValue">100000000</Property>
+          <Property name="maxValueValidateMode">allowEquals</Property>
+          <Property name="minValueValidateMode">allowEquals</Property>
+        </Validator>
+      </PropertyDef>
+      <PropertyDef name="bindPrice">
+        <Property name="dataType">BigDecimal</Property>
+      </PropertyDef>
+      <PropertyDef name="totalPrice">
+        <Property name="dataType">BigDecimal</Property>
+      </PropertyDef>
+      <PropertyDef name="remark">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsPrintCost">
+      <Property name="userData"></Property>
+      <Property name="dataType">CostPrint</Property>
+      <Property name="dataProvider">printCostService#findByProjectId</Property>
+    </DataSet>
+    <FieldSet id="fsProjectDetail" layout="padding:80,30" layoutConstraint="padding:30,8">
+      <Property name="caption">项目明细</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="fromProjectDetails" layoutConstraint="padding:50">
+          <Property name="labelWidth">100</Property>
+          <Property name="cols">*,*,*</Property>
+          <Property name="dataSet">dsPrintCost</Property>
+          <Property name="showHintMessage">true</Property>
+          <Property name="visible">true</Property>
+          <AutoFormElement id="projectId">
+            <Property name="name">projectId</Property>
+            <Property name="property">projectId</Property>
+            <Property name="hideMode">display</Property>
+            <Property name="visible">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="projectDetails" layoutConstraint="colSpan:2">
+            <Property name="name">projectDetails</Property>
+            <Property name="property">projectDetails</Property>
+            <Property name="editable">true</Property>
+            <Property name="readOnly">false</Property>
+            <Property name="label">项目明细</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="costPrintDate" layoutConstraint="rowSpan:6;align:center;vAlign:top">
+            <Property name="name">costPrintDate</Property>
+            <Property name="property">costPrintDate</Property>
+            <Property name="label">打印日期</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="printCount">
+            <Property name="name">printCount</Property>
+            <Property name="property">printCount</Property>
+            <Property name="label">打印张数</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="printPrice">
+            <Property name="name">printPrice</Property>
+            <Property name="property">printPrice</Property>
+            <Property name="label">打印费用</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="copyCount">
+            <Property name="name">copyCount</Property>
+            <Property name="property">copyCount</Property>
+            <Property name="label">复印张数</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="copyPrice">
+            <Property name="name">copyPrice</Property>
+            <Property name="property">copyPrice</Property>
+            <Property name="label">复制费用</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="colorPrintCount">
+            <Property name="name">colorPrintCount</Property>
+            <Property name="property">colorPrintCount</Property>
+            <Property name="label">彩打份数</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="colorPrintPrice">
+            <Property name="name">colorPrintPrice</Property>
+            <Property name="property">colorPrintPrice</Property>
+            <Property name="label">彩打费用</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="bindCount">
+            <Property name="name">bindCount</Property>
+            <Property name="property">bindCount</Property>
+            <Property name="label">装订本数</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="bindPrice">
+            <Property name="name">bindPrice</Property>
+            <Property name="property">bindPrice</Property>
+            <Property name="label">装订费用</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="totalPrice">
+            <Property name="name">totalPrice</Property>
+            <Property name="property">totalPrice</Property>
+            <Property name="label">合计费用</Property>
+            <Property name="readOnly">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="remark">
+            <Property name="name">remark</Property>
+            <Property name="property">remark</Property>
+            <Property name="label">备注</Property>
+            <Editor>
+              <TextArea>
+                <Property name="height">60</Property>
+                <Property name="width">300</Property>
+              </TextArea>
+            </Editor>
+          </AutoFormElement>
+        </AutoForm>
+        <UpdateAction id="saveAction">
+          <Property name="dataResolver">printCostService#save</Property>
+          <Property name="confirmMessage">正在保存...</Property>
+          <Property name="successMessage">保存成功！！！</Property>
+          <UpdateItem>
+            <Property name="dataSet">dsPrintCost</Property>
+          </UpdateItem>
+        </UpdateAction>
+      </Children>
+    </FieldSet>
+  </View>
+</ViewConfig>
